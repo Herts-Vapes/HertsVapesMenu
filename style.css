@@ -4306,3 +4306,220 @@ body { background: #020202; }
   .category-disposable-art .bundle-hayati25k { left: 43px !important; }
   .category-disposable-art .bundle-elux3500 { left: 101px !important; }
 }
+
+/* =========================================================
+   FINAL PREMIUM CATEGORY ART POLISH
+   Visual-only: tighter composition, balanced artwork, cleaner premium cards.
+   ========================================================= */
+.menu-visual {
+  padding: 26px 14px 38px !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,37,49,.15), transparent 25%),
+    radial-gradient(circle at 95% 12%, rgba(226,21,33,.09), transparent 30%),
+    linear-gradient(180deg, #020202 0%, #070000 40%, #020202 100%) !important;
+}
+
+.menu-title-band {
+  margin: 22px 0 22px !important;
+}
+
+.category-card-grid {
+  gap: 14px !important;
+}
+
+.category-card {
+  height: 126px !important;
+  min-height: 126px !important;
+  padding: 18px 64px 18px 24px !important;
+  border-radius: 25px !important;
+  border-color: rgba(255,255,255,.15) !important;
+  background:
+    radial-gradient(circle at 76% 50%, rgba(255,37,49,.20), transparent 36%),
+    radial-gradient(circle at 102% 50%, rgba(255,37,49,.11), transparent 28%),
+    linear-gradient(135deg, rgba(255,255,255,.070), rgba(255,255,255,.018) 54%, rgba(75,0,5,.24)) !important;
+  box-shadow:
+    0 18px 38px rgba(0,0,0,.48),
+    inset 0 1px 0 rgba(255,255,255,.08),
+    inset 0 0 0 1px rgba(255,255,255,.030) !important;
+}
+
+.category-card::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 1px !important;
+  border-radius: inherit !important;
+  background: linear-gradient(105deg, rgba(255,255,255,.055), transparent 34%, rgba(255,37,49,.035) 76%, transparent) !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.category-card-copy {
+  width: 42% !important;
+  max-width: 42% !important;
+  gap: 9px !important;
+}
+
+.category-card-copy strong {
+  font-size: clamp(24px, 6.2vw, 30px) !important;
+  line-height: .96 !important;
+  letter-spacing: -.062em !important;
+}
+
+.category-card-copy em {
+  font-size: clamp(12px, 3.35vw, 14px) !important;
+  color: rgba(255,255,255,.66) !important;
+}
+
+.category-card-image {
+  right: 58px !important;
+  width: 184px !important;
+  height: 104px !important;
+  isolation: isolate !important;
+}
+
+.category-card-image::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 8px !important;
+  right: 8px !important;
+  top: 50% !important;
+  height: 72px !important;
+  transform: translateY(-50%) !important;
+  border-radius: 999px !important;
+  background: radial-gradient(ellipse at center, rgba(255,37,49,.12), rgba(255,255,255,.035) 44%, transparent 72%) !important;
+  filter: blur(.2px) !important;
+  z-index: -2 !important;
+}
+
+.category-card-image::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 22px !important;
+  right: 22px !important;
+  bottom: 7px !important;
+  height: 12px !important;
+  border-radius: 999px !important;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,.44), transparent 70%) !important;
+  z-index: -1 !important;
+}
+
+.category-card-image img {
+  filter:
+    drop-shadow(0 12px 14px rgba(0,0,0,.50))
+    drop-shadow(0 0 7px rgba(255,255,255,.035)) !important;
+}
+
+.category-card-arrow {
+  right: 22px !important;
+  font-size: 43px !important;
+  color: #ff2634 !important;
+  text-shadow: 0 0 17px rgba(255,37,49,.34) !important;
+}
+
+.category-bundle img {
+  top: 52% !important;
+  max-height: 104px !important;
+  transform: translateY(-50%) !important;
+}
+
+/* Bundle compositions */
+.category-special-art .bundle-podkit {
+  left: 15px !important;
+  height: 86px !important;
+  z-index: 2 !important;
+}
+.category-special-art .bundle-lostmary {
+  left: 56px !important;
+  height: 91px !important;
+  z-index: 5 !important;
+  transform: translateY(-50%) rotate(-8deg) !important;
+}
+.category-special-art .bundle-eluxnicsalt {
+  left: 104px !important;
+  height: 79px !important;
+  z-index: 4 !important;
+}
+.category-special-art .bundle-pablopouch {
+  left: 142px !important;
+  width: 48px !important;
+  height: auto !important;
+  z-index: 6 !important;
+  transform: translateY(-47%) rotate(4deg) !important;
+}
+
+.category-disposable-art .bundle-lostmary {
+  left: 12px !important;
+  height: 87px !important;
+  z-index: 5 !important;
+  transform: translateY(-48%) rotate(-10deg) !important;
+}
+.category-disposable-art .bundle-hayati25k {
+  left: 62px !important;
+  height: 108px !important;
+  z-index: 4 !important;
+}
+.category-disposable-art .bundle-elux3500 {
+  left: 134px !important;
+  height: 91px !important;
+  z-index: 3 !important;
+}
+
+/* Single-product balancing */
+.category-podkits-art img {
+  height: 104px !important;
+  transform: translateX(-4px) !important;
+}
+.category-salts-art img {
+  height: 89px !important;
+  transform: translateX(-5px) !important;
+}
+.category-pods-art img {
+  height: 83px !important;
+  transform: translateX(-6px) !important;
+}
+.category-pouches-art img {
+  width: 80px !important;
+  transform: translateX(-5px) !important;
+}
+.category-tobacco-art img {
+  width: 144px !important;
+  transform: translateX(-10px) !important;
+}
+
+.category-card-hv {
+  right: 82px !important;
+  width: 78px !important;
+  height: 78px !important;
+}
+
+@media (max-width: 380px) {
+  .category-card {
+    height: 122px !important;
+    min-height: 122px !important;
+    padding-left: 21px !important;
+    padding-right: 58px !important;
+  }
+  .category-card-copy {
+    width: 41% !important;
+    max-width: 41% !important;
+  }
+  .category-card-copy strong {
+    font-size: clamp(22px, 6.25vw, 27px) !important;
+  }
+  .category-card-image {
+    right: 47px !important;
+    width: 165px !important;
+    height: 101px !important;
+  }
+  .category-card-arrow {
+    right: 17px !important;
+  }
+  .category-special-art .bundle-podkit { left: 7px !important; height: 82px !important; }
+  .category-special-art .bundle-lostmary { left: 42px !important; height: 86px !important; }
+  .category-special-art .bundle-eluxnicsalt { left: 86px !important; height: 74px !important; }
+  .category-special-art .bundle-pablopouch { left: 122px !important; width: 44px !important; }
+  .category-disposable-art .bundle-lostmary { left: 3px !important; height: 83px !important; }
+  .category-disposable-art .bundle-hayati25k { left: 46px !important; height: 102px !important; }
+  .category-disposable-art .bundle-elux3500 { left: 111px !important; height: 86px !important; }
+  .category-card-hv { right: 68px !important; }
+}
