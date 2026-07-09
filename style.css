@@ -5848,3 +5848,296 @@ body { background: #020202; }
   .category-disposable-art .bundle-hayati25k { height: 86px !important; }
   .category-disposable-art .bundle-elux3500 { height: 70px !important; }
 }
+
+/* =========================================================
+   HERTS VAPES CUSTOMER-READY CATEGORY REDESIGN
+   Visual-only category menu pass. Product art is integrated
+   into the card with lighting, depth and controlled spacing.
+   Cart, category opening and ordering logic are untouched.
+   ========================================================= */
+.menu-visual {
+  background:
+    radial-gradient(circle at 50% 4%, rgba(226,21,33,.18), transparent 30%),
+    linear-gradient(180deg, #020202 0%, #050000 38%, #020202 100%) !important;
+  padding-bottom: 30px !important;
+}
+
+.menu-title-band {
+  margin: 34px auto 24px !important;
+  padding: 0 24px !important;
+}
+
+.category-card-grid {
+  padding: 0 14px !important;
+  gap: 15px !important;
+}
+
+.category-card {
+  position: relative !important;
+  height: 132px !important;
+  min-height: 132px !important;
+  display: block !important;
+  overflow: hidden !important;
+  border-radius: 30px !important;
+  padding: 0 !important;
+  text-align: left !important;
+  border: 1px solid rgba(255,255,255,.105) !important;
+  background:
+    radial-gradient(circle at 88% 48%, rgba(255,37,49,.28), transparent 36%),
+    radial-gradient(circle at 58% 34%, rgba(255,255,255,.07), transparent 28%),
+    linear-gradient(100deg, #151515 0%, #101010 39%, #220306 72%, #4b070d 100%) !important;
+  box-shadow:
+    0 18px 34px rgba(0,0,0,.50),
+    inset 0 1px 0 rgba(255,255,255,.09),
+    inset 0 -1px 0 rgba(0,0,0,.38) !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+.category-card::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  border-radius: inherit !important;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.070), transparent 33%),
+    linear-gradient(180deg, rgba(255,255,255,.038), rgba(255,255,255,0) 48%, rgba(0,0,0,.22)),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.018) 0 1px, transparent 1px 7px) !important;
+  opacity: .62 !important;
+  pointer-events: none !important;
+}
+
+.category-card::after {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 1 !important;
+  left: 48% !important;
+  right: 44px !important;
+  top: 18px !important;
+  bottom: 18px !important;
+  border-radius: 50% !important;
+  background:
+    radial-gradient(ellipse at 50% 52%, rgba(255,255,255,.11), transparent 38%),
+    radial-gradient(ellipse at 54% 62%, rgba(255,37,49,.20), transparent 60%) !important;
+  filter: blur(10px) !important;
+  opacity: .78 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  pointer-events: none !important;
+}
+
+.category-card-copy {
+  position: absolute !important;
+  z-index: 6 !important;
+  left: 22px !important;
+  top: 22px !important;
+  bottom: 20px !important;
+  width: 43% !important;
+  max-width: 43% !important;
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+.category-card-copy::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  bottom: -3px !important;
+  width: 34px !important;
+  height: 3px !important;
+  border-radius: 99px !important;
+  background: linear-gradient(90deg, #ff2734, rgba(255,39,52,0)) !important;
+  opacity: .95 !important;
+}
+
+.category-card-copy strong {
+  color: #fff !important;
+  font-size: clamp(25px, 6.35vw, 30px) !important;
+  line-height: .94 !important;
+  letter-spacing: -.075em !important;
+  font-weight: 950 !important;
+  text-shadow: 0 10px 18px rgba(0,0,0,.55) !important;
+}
+
+.category-card-copy em {
+  color: rgba(255,255,255,.68) !important;
+  max-width: 118px !important;
+  font-size: 12.5px !important;
+  line-height: 1.18 !important;
+  font-weight: 850 !important;
+  font-style: normal !important;
+  text-shadow: 0 8px 14px rgba(0,0,0,.45) !important;
+}
+
+.category-card-image {
+  position: absolute !important;
+  z-index: 4 !important;
+  left: 47% !important;
+  right: 50px !important;
+  top: 50% !important;
+  height: 108px !important;
+  width: auto !important;
+  transform: translateY(-50%) !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+  isolation: isolate !important;
+}
+
+.category-card-image::before {
+  content: "" !important;
+  position: absolute !important;
+  z-index: -1 !important;
+  left: 8% !important;
+  right: 8% !important;
+  bottom: 8px !important;
+  height: 20px !important;
+  border-radius: 999px !important;
+  background:
+    radial-gradient(ellipse at center, rgba(0,0,0,.72), rgba(0,0,0,.28) 52%, transparent 76%) !important;
+  filter: blur(2px) !important;
+  opacity: .92 !important;
+}
+
+.category-card-image::after {
+  content: "" !important;
+  position: absolute !important;
+  z-index: -2 !important;
+  left: -16% !important;
+  right: -8% !important;
+  top: 8px !important;
+  bottom: 6px !important;
+  background:
+    radial-gradient(ellipse at 55% 48%, rgba(255,255,255,.09), transparent 32%),
+    radial-gradient(ellipse at 58% 56%, rgba(255,37,49,.22), transparent 58%) !important;
+  filter: blur(9px) !important;
+  opacity: .82 !important;
+}
+
+.category-card-image img {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  filter:
+    drop-shadow(0 16px 10px rgba(0,0,0,.52))
+    drop-shadow(0 0 7px rgba(255,255,255,.045)) !important;
+  transform-origin: 50% 64% !important;
+}
+
+.category-card-arrow {
+  position: absolute !important;
+  z-index: 7 !important;
+  right: 18px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: #ff2935 !important;
+  font-size: 43px !important;
+  line-height: 1 !important;
+  font-weight: 900 !important;
+  text-shadow: 0 0 18px rgba(255,37,49,.55), 0 8px 16px rgba(0,0,0,.45) !important;
+}
+
+.category-card:active {
+  transform: scale(.988) !important;
+  border-color: rgba(255,37,49,.35) !important;
+}
+
+/* Product artwork compositions */
+.category-special-art .bundle-podkit { left: 15% !important; height: 88px !important; z-index: 2 !important; transform: translate(-50%, -50%) scale(.98) !important; }
+.category-special-art .bundle-lostmary { left: 40% !important; height: 94px !important; z-index: 5 !important; transform: translate(-50%, -50%) rotate(-6deg) !important; }
+.category-special-art .bundle-eluxnicsalt { left: 66% !important; height: 78px !important; z-index: 4 !important; transform: translate(-50%, -50%) !important; }
+.category-special-art .bundle-pablopouch { left: 88% !important; width: 45px !important; height: auto !important; z-index: 6 !important; transform: translate(-50%, -50%) rotate(4deg) !important; }
+
+.category-disposable-art .bundle-lostmary { left: 15% !important; height: 88px !important; z-index: 5 !important; transform: translate(-50%, -50%) rotate(-8deg) !important; }
+.category-disposable-art .bundle-hayati25k { left: 52% !important; height: 110px !important; z-index: 4 !important; transform: translate(-50%, -50%) !important; }
+.category-disposable-art .bundle-elux3500 { left: 86% !important; height: 91px !important; z-index: 3 !important; transform: translate(-50%, -50%) !important; }
+
+.category-podkits-art img { height: 104px !important; transform: translate(-50%, -50%) !important; }
+.category-salts-art img { height: 84px !important; transform: translate(-50%, -50%) !important; }
+.category-pods-art img { height: 78px !important; transform: translate(-50%, -50%) !important; }
+.category-pouches-art img { width: 72px !important; height: auto !important; transform: translate(-50%, -50%) rotate(-4deg) !important; }
+.category-tobacco-art img { width: 132px !important; height: auto !important; transform: translate(-50%, -50%) !important; }
+
+.category-card-hv {
+  position: absolute !important;
+  z-index: 5 !important;
+  left: 64% !important;
+  top: 50% !important;
+  width: 92px !important;
+  height: 92px !important;
+  transform: translate(-50%, -50%) !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 28px !important;
+  background:
+    radial-gradient(circle at 72% 16%, rgba(255,37,49,.34), transparent 42%),
+    linear-gradient(145deg, #232323, #070707 70%) !important;
+  border: 1px solid rgba(255,37,49,.60) !important;
+  box-shadow:
+    0 18px 24px rgba(0,0,0,.48),
+    0 0 22px rgba(226,21,33,.14),
+    inset 0 0 0 1px rgba(255,255,255,.075) !important;
+}
+.category-card-hv::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 10px !important;
+  border-radius: 22px !important;
+  background: radial-gradient(circle at 50% 50%, rgba(255,37,49,.16), transparent 62%) !important;
+  filter: blur(2px) !important;
+  z-index: -1 !important;
+}
+.category-card-hv::after { content: none !important; }
+.category-card-hv span {
+  color: #fff !important;
+  font-size: 39px !important;
+  line-height: 1 !important;
+  font-weight: 950 !important;
+  letter-spacing: -.10em !important;
+  text-shadow: 0 0 14px rgba(255,37,49,.25), 0 10px 16px rgba(0,0,0,.52) !important;
+}
+
+@media (max-width: 420px) {
+  .category-card-grid { padding: 0 13px !important; gap: 14px !important; }
+  .category-card { height: 130px !important; min-height: 130px !important; border-radius: 29px !important; }
+  .category-card-copy { left: 21px !important; top: 21px !important; bottom: 20px !important; width: 42% !important; max-width: 42% !important; }
+  .category-card-copy strong { font-size: clamp(24px, 6.15vw, 28px) !important; }
+  .category-card-copy em { font-size: 12px !important; max-width: 110px !important; }
+  .category-card-image { left: 47% !important; right: 48px !important; height: 102px !important; }
+  .category-card-arrow { right: 16px !important; font-size: 41px !important; }
+
+  .category-special-art .bundle-podkit { left: 14% !important; height: 80px !important; }
+  .category-special-art .bundle-lostmary { left: 40% !important; height: 85px !important; }
+  .category-special-art .bundle-eluxnicsalt { left: 66% !important; height: 70px !important; }
+  .category-special-art .bundle-pablopouch { left: 88% !important; width: 39px !important; }
+
+  .category-disposable-art .bundle-lostmary { left: 15% !important; height: 79px !important; }
+  .category-disposable-art .bundle-hayati25k { left: 52% !important; height: 99px !important; }
+  .category-disposable-art .bundle-elux3500 { left: 86% !important; height: 82px !important; }
+
+  .category-podkits-art img { height: 94px !important; }
+  .category-salts-art img { height: 76px !important; }
+  .category-pods-art img { height: 70px !important; }
+  .category-pouches-art img { width: 64px !important; }
+  .category-tobacco-art img { width: 116px !important; }
+  .category-card-hv { left: 63% !important; width: 80px !important; height: 80px !important; border-radius: 25px !important; }
+  .category-card-hv span { font-size: 34px !important; }
+}
+
+@media (max-width: 360px) {
+  .category-card { height: 124px !important; min-height: 124px !important; }
+  .category-card-copy strong { font-size: 22px !important; }
+  .category-card-copy em { font-size: 11px !important; max-width: 102px !important; }
+  .category-card-image { left: 49% !important; right: 44px !important; height: 96px !important; }
+  .category-special-art .bundle-podkit { height: 72px !important; }
+  .category-special-art .bundle-lostmary { height: 77px !important; }
+  .category-special-art .bundle-eluxnicsalt { height: 64px !important; }
+  .category-special-art .bundle-pablopouch { width: 35px !important; }
+  .category-disposable-art .bundle-lostmary { height: 72px !important; }
+  .category-disposable-art .bundle-hayati25k { height: 90px !important; }
+  .category-disposable-art .bundle-elux3500 { height: 76px !important; }
+}
