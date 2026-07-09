@@ -4132,3 +4132,274 @@ body { background: #020202; }
     right: 24px !important;
   }
 }
+
+/* =========================================================
+   HERTS VAPES MASTER RELEASE POLISH
+   Final visual-only Live Menu/category card lock.
+   This section intentionally overrides earlier category-card experiments.
+   ========================================================= */
+.menu-visual {
+  padding: 26px 14px 38px !important;
+  overflow: visible !important;
+}
+
+.menu-title-band {
+  display: grid !important;
+  grid-template-columns: minmax(36px, 1fr) auto minmax(36px, 1fr) !important;
+  align-items: center !important;
+  gap: 15px !important;
+  margin: 28px 0 24px !important;
+  padding: 0 2px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.menu-title-band strong {
+  font-size: clamp(34px, 9vw, 44px) !important;
+  line-height: 1 !important;
+  font-weight: 950 !important;
+  letter-spacing: .18em !important;
+  text-transform: uppercase !important;
+  color: #fff !important;
+  text-shadow:
+    0 0 13px rgba(255,255,255,.18),
+    0 0 24px rgba(255,37,49,.28) !important;
+}
+
+.menu-title-band span {
+  height: 1px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, transparent, rgba(255,37,49,.82), rgba(255,255,255,.15), transparent) !important;
+  box-shadow: 0 0 11px rgba(255,37,49,.26) !important;
+}
+
+.category-card-grid {
+  gap: 14px !important;
+}
+
+.category-card {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 44%) minmax(0, 1fr) 34px !important;
+  align-items: center !important;
+  column-gap: 10px !important;
+  width: 100% !important;
+  min-height: 126px !important;
+  height: 126px !important;
+  padding: 18px 24px 18px 26px !important;
+  overflow: hidden !important;
+  border-radius: 27px !important;
+  background:
+    radial-gradient(circle at 78% 48%, rgba(255,37,49,.20), transparent 42%),
+    linear-gradient(90deg, rgba(4,4,4,.96), rgba(30,5,6,.92) 64%, rgba(46,9,10,.92)) !important;
+  border: 1px solid rgba(255,255,255,.09) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,37,49,.10),
+    0 12px 28px rgba(0,0,0,.42) !important;
+}
+
+.category-card-copy {
+  grid-column: 1 !important;
+  position: relative !important;
+  z-index: 4 !important;
+  width: auto !important;
+  max-width: none !important;
+  height: auto !important;
+  display: grid !important;
+  align-content: center !important;
+  gap: 9px !important;
+  min-width: 0 !important;
+  pointer-events: none !important;
+}
+
+.category-card-copy strong {
+  font-size: clamp(25px, 6.8vw, 31px) !important;
+  line-height: .94 !important;
+  font-weight: 950 !important;
+  letter-spacing: -.055em !important;
+  color: #fff !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,.42) !important;
+  text-wrap: balance !important;
+}
+
+.category-card-copy em {
+  font-size: clamp(13px, 3.75vw, 18px) !important;
+  line-height: 1.12 !important;
+  color: rgba(255,255,255,.68) !important;
+  font-weight: 850 !important;
+  letter-spacing: -.025em !important;
+}
+
+.category-card-image {
+  grid-column: 2 !important;
+  position: relative !important;
+  right: auto !important;
+  top: auto !important;
+  transform: none !important;
+  width: 100% !important;
+  height: 104px !important;
+  min-width: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+.category-card-image img {
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,.50)) !important;
+}
+
+.category-card-arrow {
+  grid-column: 3 !important;
+  position: relative !important;
+  right: auto !important;
+  top: auto !important;
+  transform: none !important;
+  width: 34px !important;
+  height: 54px !important;
+  display: grid !important;
+  place-items: center !important;
+  z-index: 6 !important;
+  color: var(--red-bright) !important;
+  font-size: 62px !important;
+  line-height: .7 !important;
+  text-shadow: 0 0 14px rgba(255,37,49,.26) !important;
+  pointer-events: none !important;
+}
+
+.category-bundle {
+  position: relative !important;
+  display: block !important;
+}
+
+.category-bundle img {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: auto !important;
+  max-width: none !important;
+  object-fit: contain !important;
+}
+
+.category-special-art .bundle-podkit {
+  left: 0 !important;
+  height: 94px !important;
+  z-index: 2 !important;
+}
+.category-special-art .bundle-lostmary {
+  left: 34px !important;
+  height: 98px !important;
+  z-index: 4 !important;
+}
+.category-special-art .bundle-eluxnicsalt {
+  left: 78px !important;
+  height: 84px !important;
+  z-index: 3 !important;
+}
+.category-special-art .bundle-pablopouch {
+  right: 0 !important;
+  width: 58px !important;
+  max-height: 72px !important;
+  z-index: 5 !important;
+}
+
+.category-disposable-art .bundle-lostmary {
+  left: 8px !important;
+  height: 94px !important;
+  z-index: 4 !important;
+}
+.category-disposable-art .bundle-hayati25k {
+  left: 56px !important;
+  height: 104px !important;
+  z-index: 3 !important;
+}
+.category-disposable-art .bundle-elux3500 {
+  right: 6px !important;
+  height: 92px !important;
+  z-index: 2 !important;
+}
+
+.category-podkits-art img {
+  height: 104px !important;
+}
+.category-salts-art img {
+  height: 88px !important;
+}
+.category-pods-art img {
+  height: 88px !important;
+}
+.category-pouches-art img {
+  width: 88px !important;
+}
+.category-tobacco-art img {
+  width: 140px !important;
+  max-height: 76px !important;
+}
+
+.category-card-hv {
+  grid-column: 2 !important;
+  position: relative !important;
+  right: auto !important;
+  top: auto !important;
+  transform: none !important;
+  width: 92px !important;
+  height: 92px !important;
+  justify-self: center !important;
+  display: grid !important;
+  place-items: center !important;
+  border: 2px solid rgba(255,37,49,.78) !important;
+  border-radius: 50% !important;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255,37,49,.18), rgba(0,0,0,.08) 64%),
+    linear-gradient(180deg, rgba(255,255,255,.052), rgba(255,255,255,.012)) !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), 0 0 20px rgba(255,37,49,.16) !important;
+  overflow: hidden !important;
+}
+
+.category-card-hv span {
+  display: block !important;
+  color: #fff !important;
+  font-size: 30px !important;
+  line-height: 1 !important;
+  font-weight: 950 !important;
+  letter-spacing: -.075em !important;
+  text-shadow: 0 0 14px rgba(255,37,49,.42) !important;
+}
+
+@media (max-width: 380px) {
+  .menu-visual { padding-left: 12px !important; padding-right: 12px !important; }
+  .menu-title-band { gap: 10px !important; }
+  .menu-title-band strong { font-size: 30px !important; letter-spacing: .15em !important; }
+  .category-card {
+    grid-template-columns: minmax(0, 43%) minmax(0, 1fr) 30px !important;
+    height: 122px !important;
+    min-height: 122px !important;
+    padding: 17px 20px 17px 23px !important;
+    column-gap: 8px !important;
+  }
+  .category-card-copy strong { font-size: clamp(23px, 6.6vw, 28px) !important; }
+  .category-card-copy em { font-size: 13px !important; }
+  .category-card-image { height: 98px !important; }
+  .category-card-arrow { width: 30px !important; font-size: 56px !important; }
+  .category-special-art .bundle-podkit { height: 86px !important; }
+  .category-special-art .bundle-lostmary { left: 30px !important; height: 90px !important; }
+  .category-special-art .bundle-eluxnicsalt { left: 68px !important; height: 76px !important; }
+  .category-special-art .bundle-pablopouch { width: 52px !important; }
+  .category-disposable-art .bundle-lostmary { height: 86px !important; }
+  .category-disposable-art .bundle-hayati25k { left: 50px !important; height: 96px !important; }
+  .category-disposable-art .bundle-elux3500 { height: 84px !important; }
+  .category-podkits-art img { height: 96px !important; }
+  .category-salts-art img, .category-pods-art img { height: 82px !important; }
+  .category-pouches-art img { width: 82px !important; }
+  .category-tobacco-art img { width: 126px !important; }
+  .category-card-hv { width: 84px !important; height: 84px !important; }
+}
