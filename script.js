@@ -557,7 +557,7 @@ cartSnapchat.addEventListener("click", async () => {
   softTap();
   await copyOrderMessage();
   showToast("✓ Order copied. Paste into Snapchat.");
-  setTimeout(() => window.open("https://www.snapchat.com/add/herts.vps", "_blank"), 350);
+  setTimeout(() => window.open("https://www.snapchat.com/add/herts.vps1", "_blank"), 350);
 });
 
 // Final public clean build marker. Functionality above is unchanged.
