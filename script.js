@@ -138,7 +138,7 @@ function renderDeal(deal) {
         <div class="price-pill">${escapeHtml(deal.price)}</div>
       </div>
       <div class="card-actions">
-        <button class="add-cart-button" type="button" data-add="${escapeHtml(displayName)}" data-price="${escapeHtml(deal.price)}" data-prompts="${promptData}">ADD</button>
+        <button class="add-cart-button" type="button" data-add="${escapeHtml(displayName)}" data-price="${escapeHtml(deal.price)}" data-prompts="${promptData}">ADD TO CART</button>
       </div>
     </article>
   `;
@@ -187,19 +187,39 @@ function renderBulkCategory(category) {
 }
 
 
+function productImageFor(name) {
+  const key = String(name).toLowerCase();
+  if (key.includes("lost mary")) return "lostmary.png.png";
+  if (key.includes("hayati dual")) return "hayati25k.png.png";
+  if (key.includes("hayati pro")) return "hayati6000.png.png";
+  if (key.includes("elux legend 3500")) return "elux3500.png.png";
+  if (key.includes("enjoy ultra")) return "enjoyultra.png.png";
+  if (key.includes("pixl")) return "pixl8000.png.png";
+  if (key.includes("xros pro")) return "podkit.png.png";
+  if (key.includes("nic salts")) return "eluxnicsalt.png.png";
+  if (key.includes("corex") || key.includes("xros pods")) return "vaporessopod.png.png";
+  if (key.includes("pablo")) return "pablopouch.png.png";
+  if (key.includes("velo")) return "velopouch.png.png";
+  if (key.includes("amber leaf")) return "amberleaf.png.png";
+  return "";
+}
+
 function renderProduct(product) {
   const choices = product.flavours || product.details || [];
   const hasExpandable = choices.length > 1 && !product.pricing;
   const hasSingleChoice = choices.length === 1 && !product.pricing;
+  const image = productImageFor(product.name);
 
   return `
     <article class="product-card ${hasExpandable ? "can-open" : ""}">
       <button class="product-main" type="button" ${hasExpandable ? "" : "disabled"}>
-        <div>
+        ${image ? `<span class="product-thumb"><img src="${image}" alt="" loading="lazy"></span>` : ""}
+        <div class="product-copy">
           <div class="product-name">${escapeHtml(product.name)}${product.popular ? ` <span class="popular-badge">MOST POPULAR</span>` : ""}</div>
-          <div class="product-meta">${escapeHtml(product.meta)}${hasExpandable ? "  ▾" : ""}</div>
+          <div class="product-meta">${escapeHtml(product.meta)}</div>
+          ${product.price ? `<div class="product-inline-price">${escapeHtml(product.price)}</div>` : ""}
         </div>
-        ${product.price ? `<div class="price-pill">${escapeHtml(product.price)}</div>` : ""}
+        ${hasExpandable ? `<span class="product-chevron" aria-hidden="true">›</span>` : ""}
       </button>
       ${product.pricing ? renderPricing(product) : ""}
       ${hasExpandable ? renderExpandable(product) : ""}
@@ -212,7 +232,7 @@ function renderProduct(product) {
 function renderQuickAdd(product, option = "") {
   return `
     <div class="card-actions">
-      <button class="add-cart-button" type="button" data-add="${escapeHtml(product.name)}" data-option="${escapeHtml(option)}" data-price="${escapeHtml(product.price || "")}">ADD</button>
+      <button class="add-cart-button" type="button" data-add="${escapeHtml(product.name)}" data-option="${escapeHtml(option)}" data-price="${escapeHtml(product.price || "")}">ADD TO CART</button>
     </div>
   `;
 }
@@ -222,7 +242,7 @@ function renderSingleOption(product, option = "") {
     <div class="single-option-list">
       <button class="option-add-row" type="button" data-add="${escapeHtml(product.name)}" data-option="${escapeHtml(option)}" data-price="${escapeHtml(product.price || "")}">
         <span>${escapeHtml(option || product.name)}</span>
-        <em>ADD</em>
+        <em>ADD TO CART</em>
       </button>
     </div>
   `;
@@ -236,7 +256,7 @@ function renderPricing(product) {
           <div class="option-group">
             <div class="option-title">${escapeHtml(detail)}</div>
             <div class="option-prices">
-              ${product.pricing.map(row => `<button class="price-row add-price" type="button" data-add="${escapeHtml(product.name)}" data-option="${escapeHtml(detail + " - " + row.label)}" data-price="${escapeHtml(row.price)}"><span>${escapeHtml(row.label)}</span><strong>${escapeHtml(row.price)}</strong><em>ADD</em></button>`).join("")}
+              ${product.pricing.map(row => `<button class="price-row add-price" type="button" data-add="${escapeHtml(product.name)}" data-option="${escapeHtml(detail + " - " + row.label)}" data-price="${escapeHtml(row.price)}"><span>${escapeHtml(row.label)}</span><strong>${escapeHtml(row.price)}</strong><em>ADD TO CART</em></button>`).join("")}
             </div>
             ${product.saving ? `<div class="saving option-saving">${escapeHtml(product.saving)}</div>` : ""}
           </div>
@@ -247,7 +267,7 @@ function renderPricing(product) {
 
   return `
     <div class="price-pair priced-options">
-      ${product.pricing.map(row => `<button class="price-row add-price" type="button" data-add="${escapeHtml(product.name)}" data-option="${escapeHtml(row.label)}" data-price="${escapeHtml(row.price)}"><span>${escapeHtml(row.label)}</span><strong>${escapeHtml(row.price)}</strong><em>ADD</em></button>`).join("")}
+      ${product.pricing.map(row => `<button class="price-row add-price" type="button" data-add="${escapeHtml(product.name)}" data-option="${escapeHtml(row.label)}" data-price="${escapeHtml(row.price)}"><span>${escapeHtml(row.label)}</span><strong>${escapeHtml(row.price)}</strong><em>ADD TO CART</em></button>`).join("")}
       ${product.saving ? `<div class="saving">${escapeHtml(product.saving)}</div>` : ""}
     </div>
   `;
@@ -256,7 +276,7 @@ function renderPricing(product) {
 function renderExpandable(product) {
   const list = product.flavours || product.details || [];
   const twoCol = list.length >= 6 ? " two-col" : "";
-  return `<div class="expand-content"><div class="flavour-list${twoCol}">${list.map(item => `<button class="flavour add-flavour" type="button" data-add="${escapeHtml(product.name)}" data-option="${escapeHtml(item)}" data-price="${escapeHtml(product.price || "")}">${escapeHtml(item)}<span>ADD</span></button>`).join("")}</div></div>`;
+  return `<div class="expand-content"><div class="flavour-list${twoCol}">${list.map(item => `<button class="flavour add-flavour" type="button" data-add="${escapeHtml(product.name)}" data-option="${escapeHtml(item)}" data-price="${escapeHtml(product.price || "")}">${escapeHtml(item)}<span>ADD TO CART</span></button>`).join("")}</div></div>`;
 }
 
 function setupProductCards() {
@@ -321,7 +341,7 @@ function renderCart() {
   cartFloat.classList.toggle("has-items", total > 0);
 
   if (!cart.length) {
-    cartBody.innerHTML = `<div class="empty-cart"><strong>Your order starts here.</strong><br>Tap <b>ADD</b> on any product to begin.</div>`;
+    cartBody.innerHTML = `<div class="empty-cart"><strong>Your order starts here.</strong><br>Tap <b>ADD TO CART</b> on any product to begin.</div>`;
     return;
   }
 
@@ -453,4 +473,4 @@ cartSnapchat.addEventListener("click", async () => {
 });
 
 // Final public clean build marker. Functionality above is unchanged.
-window.HERTS_VAPES_BUILD = "final-public-clean";
+window.HERTS_VAPES_BUILD = "ux-v3-polished-clean";
