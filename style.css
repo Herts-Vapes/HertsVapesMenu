@@ -4335,3 +4335,103 @@ body{padding-bottom:82px}
 .add-flavour:last-child{border-bottom:0}.add-flavour span{border:1px solid rgba(226,21,33,.75);border-radius:9px;padding:8px 10px;color:var(--red-bright);font-size:9px;letter-spacing:.06em;white-space:nowrap;background:rgba(226,21,33,.035)}
 .add-flavour:active span{background:var(--red);color:#fff}.single-option-list{padding:0!important}.option-add-row{border-radius:0!important;padding:13px 14px!important}.option-add-row em{border:1px solid rgba(226,21,33,.75);border-radius:9px;padding:8px 10px}
 @media(max-width:430px){.app-topbar{padding:12px 14px}.app-brand{font-size:12px}.app-hv{font-size:26px}.app-social{width:36px;height:36px}.menu-title-band strong{font-size:clamp(32px,10vw,48px)!important;white-space:nowrap}.category-card-copy strong{font-size:30px!important}.product-thumb{width:62px;flex-basis:62px}.product-main{min-height:94px}.add-flavour{font-size:12px}.add-flavour span{font-size:8px;padding:7px 8px}}
+
+/* =========================================================
+   MOBILE TYPOGRAPHY + SOCIAL ICON POLISH — 2026-07-16
+   ========================================================= */
+.app-social svg {
+  width: 23px;
+  height: 23px;
+  display: block;
+}
+.app-social.whatsapp { color: #22e267; }
+.app-social.snapchat { color: #fff; }
+
+.menu-title-band {
+  width: min(100%, 760px) !important;
+  padding: 24px 18px 12px !important;
+  margin: 0 auto 8px !important;
+  overflow: hidden !important;
+  gap: 0 !important;
+}
+.menu-title-band span { display: none !important; }
+.menu-title-band strong {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  font-size: clamp(28px, 8.2vw, 52px) !important;
+  line-height: .98 !important;
+  letter-spacing: .055em !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  text-wrap: nowrap !important;
+  overflow: visible !important;
+}
+
+.category-card {
+  min-height: 212px !important;
+  padding: 25px 24px 22px !important;
+}
+.category-card-copy {
+  width: 43% !important;
+  min-width: 0 !important;
+  align-self: stretch !important;
+  justify-content: center !important;
+  padding: 0 !important;
+}
+.category-card-copy strong {
+  display: block !important;
+  margin: 0 0 32px !important;
+  max-width: 100% !important;
+  font-size: clamp(26px, 7.2vw, 38px) !important;
+  line-height: .94 !important;
+  letter-spacing: -.045em !important;
+  text-wrap: balance !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+.category-card::after {
+  left: 24px !important;
+  bottom: 22px !important;
+}
+
+@media (max-width: 430px) {
+  .app-topbar,
+  .panel-appbar {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .app-brand { gap: 8px !important; }
+  .app-brand > span:last-child { white-space: nowrap !important; }
+  .menu-title-band {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  .menu-title-band strong {
+    font-size: clamp(27px, 8vw, 38px) !important;
+    letter-spacing: .035em !important;
+  }
+  .category-card {
+    min-height: 205px !important;
+    padding: 22px 20px 20px !important;
+  }
+  .category-card-copy { width: 45% !important; }
+  .category-card-copy strong {
+    font-size: clamp(25px, 7.4vw, 32px) !important;
+    line-height: .95 !important;
+    margin-bottom: 30px !important;
+  }
+  .category-card::after {
+    left: 20px !important;
+    bottom: 20px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .menu-title-band strong {
+    font-size: 26px !important;
+    letter-spacing: .02em !important;
+  }
+  .category-card-copy strong { font-size: 24px !important; }
+}
