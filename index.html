@@ -4,13 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#050505" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <meta name="description" content="Herts Vapes live menu. Browse products, flavours and deals, then order through WhatsApp or Snapchat." />
   <title>Herts Vapes Menu</title>
   <link rel="preload" href="hero.jpg" as="image" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="site-shell" data-version="final-public-shopnow-clean">
+  <main class="site-shell" data-version="ux-v2-stock-20260716">
     <section class="hero final-hero" id="top" aria-label="Herts Vapes hero">
       <img src="hero.jpg" alt="Herts Vapes - Fast. Reliable. Local." class="hero-art" />
       <div class="hero-ambient" aria-hidden="true"></div>
@@ -26,8 +29,12 @@
         </div>
         <p class="hero-tagline">Fast. Reliable. Local.</p>
         <p class="hero-subcopy">Build your order in seconds, then send it through WhatsApp or Snapchat.</p>
-        <button class="hero-cta" type="button" data-scroll="#menu" aria-label="Shop now"><span class="hero-lock">▱</span> Shop Now</button>
-        <p class="hero-mini-note">Tap Shop Now or scroll down to open the live menu.</p>
+        <button class="hero-cta" type="button" data-scroll="#menu" aria-label="Build your order"><span class="hero-lock">🛒</span> Build Your Order</button>
+        <div class="hero-contact-actions" aria-label="Contact Herts Vapes">
+          <a class="hero-contact-button whatsapp" href="https://wa.me/447885752823?text=Hi%20Herts%20Vapes%2C%20I%27d%20like%20to%20place%20an%20order.">💬 WhatsApp</a>
+          <a class="hero-contact-button snapchat" href="https://www.snapchat.com/add/herts.vps1">👻 Snapchat</a>
+        </div>
+        <p class="hero-mini-note">Browse the menu or message us directly.</p>
         <div class="scroll-cue" aria-hidden="true">⌄</div>
       </div>
       <button class="hotspot hero-shop" data-scroll="#menu" aria-label="Shop now"></button>
@@ -40,9 +47,10 @@
     <section class="menu-visual" id="menu" aria-label="Herts Vapes menu categories">
       <div class="menu-title-band" aria-hidden="true">
         <span></span>
-        <strong>Live Menu</strong>
+        <strong>Build Your Order</strong>
         <span></span>
       </div>
+      <p class="menu-instruction">👆 Tap any product to view flavours and add items to your cart.</p>
 
       <div class="category-card-grid" aria-label="Browse categories">
         <button class="category-card" type="button" data-category="special" aria-label="Open special deals">
@@ -100,7 +108,7 @@
         <div class="panel-header">
           <button class="back-button" id="closePanel" aria-label="Close category">‹</button>
           <div class="panel-heading">
-            <p class="panel-eyebrow">LIVE MENU</p>
+            <p class="panel-eyebrow">BUILD YOUR ORDER</p>
             <h2 id="panelTitle">Menu</h2>
           </div>
         </div>
@@ -132,15 +140,15 @@
       <div class="cart-header">
         <div>
           <p class="panel-eyebrow">YOUR ORDER</p>
-          <h2>Cart</h2>
+          <h2>Your Order</h2>
         </div>
         <button class="cart-close" id="cartClose" type="button" aria-label="Close cart">×</button>
       </div>
       <div class="cart-body" id="cartBody"></div>
       <div class="cart-footer">
         <div class="send-ready">
-          <h3>Ready to Send ✓</h3>
-          <p>Choose how you want to send your order.</p>
+          <h3>Ready to order?</h3>
+          <p>Send your order using WhatsApp or Snapchat.</p>
         </div>
         <div class="cart-actions send-actions">
           <button class="order-button whatsapp" id="cartWhatsapp" type="button">WhatsApp</button>
@@ -152,8 +160,8 @@
 
     <div class="toast" id="toast" role="status" aria-live="polite">Added to cart</div>
   </main>
-  <script src="settings.js?v=inventory-system-fixed-20260709"></script>
-  <script src="inventory.js?v=inventory-system-fixed-20260709"></script>
-  <script src="script.js?v=inventory-system-fixed-20260709"></script>
+  <script src="settings.js?v=ux-v2-stock-20260716"></script>
+  <script src="inventory.js?v=ux-v2-stock-20260716"></script>
+  <script src="script.js?v=ux-v2-stock-20260716"></script>
 </body>
 </html>

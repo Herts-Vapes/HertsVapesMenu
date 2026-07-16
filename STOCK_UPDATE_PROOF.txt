@@ -1,0 +1,5 @@
+Verified stock update:
+- Elux Legend Nic Salts contains Cherry Ice
+- Elux Legend Nic Salts meta says 25 flavours available
+- script.js uses inventory.js as the single inventory source
+- index.html loads settings.js, inventory.js, then script.js with a fresh cache-busting version

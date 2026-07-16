@@ -377,7 +377,7 @@ async function copyOrderMessage() {
   const message = buildOrderMessage();
   try {
     await navigator.clipboard.writeText(message);
-    showToast("✓ Order copied");
+    showToast("✓ Your order is ready to send");
   } catch (error) {
     showToast("Order ready to copy");
   }
