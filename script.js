@@ -1,46 +1,36 @@
-/*
-  HERTS VAPES PRODUCT DATA
-  Future updates: edit products, flavours, prices, bundles and bulk copy in this inventory object only.
-  The rendering/cart/order logic below should not need changing for normal stock updates.
-*/
-// HERTS VAPES INVENTORY SYSTEM
-// Stock/product updates now come from inventory.js only.
-// Do not keep duplicate product lists in this file.
 const inventory = window.HV_INVENTORY;
+const settings = window.HV_SETTINGS || {};
+if (!inventory) throw new Error("inventory.js did not load");
 
-if (!inventory) {
-  throw new Error("Herts Vapes inventory.js did not load. Check index.html script order: settings.js, inventory.js, script.js");
-}
-
-
-const menu = document.querySelector(".menu-visual");
-const readyCard = document.querySelector(".ready-card");
-const bulkCard = document.querySelector(".bulk-card");
-const panel = document.getElementById("inventoryPanel");
-const panelTitle = document.getElementById("panelTitle");
-const panelContent = document.getElementById("panelContent");
-const closePanel = document.getElementById("closePanel");
-const cartFloat = document.getElementById("cartFloat");
-const cartCount = document.getElementById("cartCount");
+const CART_KEY = "hertsVapesCart";
+const categoryList = document.getElementById("categoryList");
+const moreToggle = document.getElementById("moreToggle");
+const moreContent = document.getElementById("moreContent");
+const orderBar = document.getElementById("orderBar");
+const orderBarCount = document.getElementById("orderBarCount");
+const orderBarTotal = document.getElementById("orderBarTotal");
 const cartOverlay = document.getElementById("cartOverlay");
 const cartDrawer = document.getElementById("cartDrawer");
 const cartClose = document.getElementById("cartClose");
 const cartBody = document.getElementById("cartBody");
+const cartTotal = document.getElementById("cartTotal");
 const cartWhatsapp = document.getElementById("cartWhatsapp");
 const cartSnapchat = document.getElementById("cartSnapchat");
 const cartClear = document.getElementById("cartClear");
 const toast = document.getElementById("toast");
-const WHATSAPP_NUMBER = (window.HV_SETTINGS && window.HV_SETTINGS.whatsappNumber) || "447885752823";
-const CART_KEY = "hertsVapesCart";
-let cart = loadCart();
 let toastTimer;
+let cart = loadCart();
 
-function softTap() {
-  if (navigator.vibrate) navigator.vibrate(8);
-}
+const MAIN_CATEGORIES = [
+  { key: "disposable", title: "Disposable Vapes", image: "lostmary.png.png" },
+  { key: "salts", title: "Nic Salts", image: "eluxnicsalt.png.png" },
+  { key: "podsandkits", title: "Pods & Kits", image: "podkit.png.png" },
+  { key: "pouches", title: "Nicotine Pouches", image: "pablopouch.png.png" },
+  { key: "special", title: "Bundle Deals", image: "hayati25k.png.png" }
+];
 
 function escapeHtml(value) {
-  return String(value)
+  return String(value ?? "")
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
@@ -49,11 +39,8 @@ function escapeHtml(value) {
 }
 
 function loadCart() {
-  try {
-    return JSON.parse(localStorage.getItem(CART_KEY)) || [];
-  } catch (error) {
-    return [];
-  }
+  try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
+  catch { return []; }
 }
 
 function saveCart() {
@@ -61,131 +48,71 @@ function saveCart() {
   renderCart();
 }
 
-function revealMenu() {
-  if (!menu) return;
-  menu.classList.add("reveal");
-  document.body.classList.add("menu-entered");
+function moneyValue(price) {
+  const value = Number(String(price || "").replace(/[^0-9.]/g, ""));
+  return Number.isFinite(value) ? value : 0;
 }
 
-document.querySelectorAll("[data-scroll]").forEach((button) => {
-  button.addEventListener("click", () => {
-    softTap();
-    revealMenu();
-    const target = document.querySelector(button.dataset.scroll);
-    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-});
-
-function revealOnScroll() {
-  const vh = window.innerHeight;
-  if (window.scrollY > 18 || (menu && menu.getBoundingClientRect().top < vh * 0.72)) revealMenu();
-  if (readyCard && readyCard.getBoundingClientRect().top < vh * 0.86) readyCard.classList.add("reveal");
-  if (bulkCard && bulkCard.getBoundingClientRect().top < vh * 0.88) bulkCard.classList.add("reveal");
+function formatMoney(value) {
+  return `£${value.toFixed(2).replace(/\.00$/, "")}`;
 }
 
-window.addEventListener("scroll", revealOnScroll, { passive: true });
-window.addEventListener("load", () => {
-  document.body.classList.add("hero-loaded");
-  renderCart();
-});
-
-document.querySelectorAll("[data-category]").forEach((button) => {
-  button.addEventListener("click", () => {
-    softTap();
-    openCategory(button.dataset.category);
-  });
-});
-
-closePanel.addEventListener("click", () => {
-  softTap();
-  panel.classList.remove("open");
-  panel.style.display = "none";
-  document.getElementById("menu").scrollIntoView({ behavior: "smooth", block: "start" });
-});
-
-function openCategory(key) {
-  const category = inventory[key];
-  if (!category) return;
-  panel.dataset.category = key;
-  panelTitle.textContent = category.title;
-  panelContent.innerHTML = renderCategory(category);
-  panel.style.display = "block";
-  requestAnimationFrame(() => panel.classList.add("open"));
-  panel.scrollIntoView({ behavior: "smooth", block: "start" });
-  setupProductCards();
+function totalItems() {
+  return cart.reduce((sum, item) => sum + item.qty, 0);
 }
 
-function renderCategory(category) {
-  if (category.type === "bulk") return renderBulkCategory(category);
+function totalPrice() {
+  return cart.reduce((sum, item) => sum + moneyValue(item.price) * item.qty, 0);
+}
+
+function softTap() {
+  if (navigator.vibrate) navigator.vibrate(8);
+}
+
+function showToast(message = "✓ Added") {
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 1200);
+}
+
+function categoryData(key) {
+  if (key === "podsandkits") {
+    return {
+      title: "Pods & Kits",
+      items: [...(inventory.podkits?.items || []), ...(inventory.pods?.items || [])]
+    };
+  }
+  return inventory[key];
+}
+
+function renderCategories() {
+  categoryList.innerHTML = MAIN_CATEGORIES.map(category => `
+    <section class="category" data-category-section="${category.key}">
+      <button class="category-button" type="button" aria-expanded="false">
+        <span class="category-image"><img src="${category.image}" alt="" loading="lazy"></span>
+        <span class="category-title">${escapeHtml(category.title)}</span>
+        <span class="category-arrow" aria-hidden="true">⌄</span>
+      </button>
+      <div class="category-content" hidden></div>
+    </section>
+  `).join("");
+
+  moreContent.innerHTML = `
+    <button class="bulk-link" type="button" id="bulkLink">
+      <span><strong>HV Bulk</strong><small>Large pre-orders from £100</small></span>
+      <span aria-hidden="true">›</span>
+    </button>
+    <div id="bulkContent" hidden></div>
+  `;
+}
+
+function renderCategory(key) {
+  const category = categoryData(key);
+  if (!category) return `<p class="empty-message">Nothing available right now.</p>`;
   if (category.type === "deals") return category.items.map(renderDeal).join("");
   return category.items.map(renderProduct).join("");
 }
-
-function renderDeal(deal) {
-  const promptData = deal.prompts ? escapeHtml(deal.prompts.join("||")) : "";
-  const displayName = deal.subline ? `${deal.name} ${deal.subline}` : deal.name;
-  return `
-    <article class="deal-card offer-card">
-      ${renderDealVisuals(deal)}
-      <div class="deal-main">
-        <div>
-          ${deal.saving ? `<div class="saving-badge">${escapeHtml(deal.saving)}</div>` : ""}
-          <div class="deal-name">${escapeHtml(deal.name)}</div>
-          ${deal.subline ? `<div class="deal-plus-line">${escapeHtml(deal.subline)}</div>` : ""}
-          <div class="deal-meta">${escapeHtml(deal.meta)}</div>
-          ${deal.confirm ? `<div class="confirm-note">${escapeHtml(deal.confirm)}</div>` : ""}
-        </div>
-        <div class="price-pill">${escapeHtml(deal.price)}</div>
-      </div>
-      <div class="card-actions">
-        <button class="add-cart-button" type="button" data-add="${escapeHtml(displayName)}" data-price="${escapeHtml(deal.price)}" data-prompts="${promptData}">ADD TO CART</button>
-      </div>
-    </article>
-  `;
-}
-
-function renderDealVisuals(deal) {
-  if (!deal.visuals || !deal.visuals.length) return "";
-  return `
-    <div class="deal-visuals">
-      ${deal.visuals.map((visual, index) => `
-        ${index > 0 ? `<span class="deal-visual-plus">+</span>` : ""}
-        <div class="deal-product-tile">
-          <span class="deal-product-label">${escapeHtml(visual.label)}</span>
-          ${visual.qty ? `<strong>${escapeHtml(visual.qty)}</strong>` : ""}
-        </div>
-      `).join("")}
-    </div>
-  `;
-}
-
-function renderBulkCategory(category) {
-  return `
-    <article class="bulk-panel-card bulk-final-card">
-      <div class="bulk-icon-box package-icon" aria-hidden="true">
-        <svg viewBox="0 0 120 100" focusable="false">
-          <path d="M20 34 60 14 100 34 60 54 20 34Z"></path>
-          <path d="M20 34v38l40 20V54L20 34Z"></path>
-          <path d="M100 34v38L60 92V54l40-20Z"></path>
-          <path d="M42 24 82 44"></path>
-        </svg>
-      </div>
-      <p class="bulk-panel-kicker">HV BULK</p>
-      <h3>Bulk Orders</h3>
-      <p class="bulk-intro">${escapeHtml(category.intro)}</p>
-      <div class="bulk-points panel-bulk-points">
-        ${category.points.map(point => `<div class="bulk-point">${escapeHtml(point)}</div>`).join("")}
-      </div>
-      <div class="bulk-minimum-box">
-        <span>Available on bulk pre-orders from</span>
-        <strong>£100+</strong>
-      </div>
-      <a href="${category.link}" class="order-button bulk-button">Order on WhatsApp</a>
-      <p class="bulk-footnote">You will be redirected to WhatsApp to place your bulk order.</p>
-    </article>
-  `;
-}
-
 
 function productImageFor(name) {
   const key = String(name).toLowerCase();
@@ -200,211 +127,139 @@ function productImageFor(name) {
   if (key.includes("corex") || key.includes("xros pods")) return "vaporessopod.png.png";
   if (key.includes("pablo")) return "pablopouch.png.png";
   if (key.includes("velo")) return "velopouch.png.png";
-  if (key.includes("amber leaf")) return "amberleaf.png.png";
   return "";
 }
 
 function renderProduct(product) {
   const choices = product.flavours || product.details || [];
-  const hasExpandable = choices.length > 1 && !product.pricing;
-  const hasSingleChoice = choices.length === 1 && !product.pricing;
   const image = productImageFor(product.name);
-
+  const needsChoice = choices.length > 0;
   return `
-    <article class="product-card ${hasExpandable ? "can-open" : ""}">
-      <button class="product-main" type="button" ${hasExpandable ? "" : "disabled"}>
-        ${image ? `<span class="product-thumb"><img src="${image}" alt="" loading="lazy"></span>` : ""}
-        <div class="product-copy">
-          <div class="product-name">${escapeHtml(product.name)}${product.popular ? ` <span class="popular-badge">MOST POPULAR</span>` : ""}</div>
-          <div class="product-meta">${escapeHtml(product.meta)}</div>
-          ${product.price ? `<div class="product-inline-price">${escapeHtml(product.price)}</div>` : ""}
-        </div>
-        ${hasExpandable ? `<span class="product-chevron" aria-hidden="true">›</span>` : ""}
+    <article class="product-card ${needsChoice ? "has-options" : ""}">
+      <button class="product-button" type="button" ${needsChoice ? "" : "disabled"} aria-expanded="false">
+        ${image ? `<span class="product-image"><img src="${image}" alt="" loading="lazy"></span>` : ""}
+        <span class="product-copy">
+          <strong>${escapeHtml(product.name)}</strong>
+          <small>${escapeHtml(product.meta || "")}</small>
+        </span>
+        ${product.price ? `<span class="product-price">${escapeHtml(product.price)}</span>` : ""}
+        ${needsChoice ? `<span class="product-arrow" aria-hidden="true">⌄</span>` : ""}
       </button>
       ${product.pricing ? renderPricing(product) : ""}
-      ${hasExpandable ? renderExpandable(product) : ""}
-      ${hasSingleChoice ? renderSingleOption(product, choices[0]) : ""}
-      ${!product.pricing && choices.length === 0 ? renderQuickAdd(product, "") : ""}
+      ${needsChoice ? `<div class="product-options" hidden>${renderChoices(product, choices)}</div>` : renderQuickAdd(product)}
     </article>
   `;
 }
 
-function renderQuickAdd(product, option = "") {
-  return `
-    <div class="card-actions">
-      <button class="add-cart-button" type="button" data-add="${escapeHtml(product.name)}" data-option="${escapeHtml(option)}" data-price="${escapeHtml(product.price || "")}">ADD TO CART</button>
-    </div>
-  `;
+function renderChoices(product, choices) {
+  return choices.map(choice => `
+    <button class="choice-button" type="button" data-add="${escapeHtml(product.name)}" data-option="${escapeHtml(choice)}" data-price="${escapeHtml(product.price || "")}">
+      <span>${escapeHtml(choice)}</span><strong>Add</strong>
+    </button>
+  `).join("");
 }
 
-function renderSingleOption(product, option = "") {
-  return `
-    <div class="single-option-list">
-      <button class="option-add-row" type="button" data-add="${escapeHtml(product.name)}" data-option="${escapeHtml(option)}" data-price="${escapeHtml(product.price || "")}">
-        <span>${escapeHtml(option || product.name)}</span>
-        <em>ADD TO CART</em>
-      </button>
-    </div>
-  `;
+function renderQuickAdd(product) {
+  if (product.pricing) return "";
+  return `<button class="quick-add" type="button" data-add="${escapeHtml(product.name)}" data-price="${escapeHtml(product.price || "")}">Add to Order</button>`;
 }
 
 function renderPricing(product) {
-  if (product.details && product.details.length) {
-    return `
-      <div class="price-pair priced-options">
-        ${product.details.map(detail => `
-          <div class="option-group">
-            <div class="option-title">${escapeHtml(detail)}</div>
-            <div class="option-prices">
-              ${product.pricing.map(row => `<button class="price-row add-price" type="button" data-add="${escapeHtml(product.name)}" data-option="${escapeHtml(detail + " - " + row.label)}" data-price="${escapeHtml(row.price)}"><span>${escapeHtml(row.label)}</span><strong>${escapeHtml(row.price)}</strong><em>ADD TO CART</em></button>`).join("")}
-            </div>
-            ${product.saving ? `<div class="saving option-saving">${escapeHtml(product.saving)}</div>` : ""}
-          </div>
-        `).join("")}
-      </div>
-    `;
-  }
+  return `<div class="pricing-options">${product.pricing.map(row => `
+    <button class="choice-button price-choice" type="button" data-add="${escapeHtml(product.name)}" data-option="${escapeHtml(row.label)}" data-price="${escapeHtml(row.price)}">
+      <span>${escapeHtml(row.label)}</span><strong>${escapeHtml(row.price)} · Add</strong>
+    </button>
+  `).join("")}</div>`;
+}
 
+function renderDeal(deal) {
+  const displayName = deal.subline ? `${deal.name} ${deal.subline}` : deal.name;
+  const prompts = escapeHtml((deal.prompts || []).join("||"));
   return `
-    <div class="price-pair priced-options">
-      ${product.pricing.map(row => `<button class="price-row add-price" type="button" data-add="${escapeHtml(product.name)}" data-option="${escapeHtml(row.label)}" data-price="${escapeHtml(row.price)}"><span>${escapeHtml(row.label)}</span><strong>${escapeHtml(row.price)}</strong><em>ADD TO CART</em></button>`).join("")}
-      ${product.saving ? `<div class="saving">${escapeHtml(product.saving)}</div>` : ""}
-    </div>
+    <article class="deal-card">
+      <div class="deal-copy">
+        <small>${escapeHtml(deal.saving || "Bundle")}</small>
+        <strong>${escapeHtml(deal.name)}</strong>
+        ${deal.subline ? `<span>${escapeHtml(deal.subline)}</span>` : ""}
+      </div>
+      <div class="deal-price">${escapeHtml(deal.price)}</div>
+      <button class="quick-add" type="button" data-add="${escapeHtml(displayName)}" data-price="${escapeHtml(deal.price)}" data-prompts="${prompts}">Add Bundle</button>
+    </article>
   `;
 }
 
-function renderExpandable(product) {
-  const list = product.flavours || product.details || [];
-  const twoCol = list.length >= 6 ? " two-col" : "";
-  return `<div class="expand-content"><div class="flavour-list${twoCol}">${list.map(item => `<button class="flavour add-flavour" type="button" data-add="${escapeHtml(product.name)}" data-option="${escapeHtml(item)}" data-price="${escapeHtml(product.price || "")}">${escapeHtml(item)}<span>ADD TO CART</span></button>`).join("")}</div></div>`;
+function toggleCategory(section) {
+  const button = section.querySelector(".category-button");
+  const content = section.querySelector(".category-content");
+  const opening = content.hidden;
+  button.setAttribute("aria-expanded", String(opening));
+  section.classList.toggle("open", opening);
+  if (opening && !content.dataset.loaded) {
+    content.innerHTML = renderCategory(section.dataset.categorySection);
+    content.dataset.loaded = "true";
+  }
+  content.hidden = !opening;
 }
 
-function setupProductCards() {
-  const cards = [...document.querySelectorAll(".product-card.can-open")];
-  cards.forEach((card) => {
-    const button = card.querySelector(".product-main");
-    button.addEventListener("click", () => {
-      softTap();
-      cards.forEach(other => { if (other !== card) other.classList.remove("open"); });
-      card.classList.toggle("open");
-    });
-  });
+function toggleProduct(card) {
+  const button = card.querySelector(".product-button");
+  const options = card.querySelector(".product-options");
+  if (!options) return;
+  const opening = options.hidden;
+  options.hidden = !opening;
+  card.classList.toggle("open", opening);
+  button.setAttribute("aria-expanded", String(opening));
 }
-
-panelContent.addEventListener("click", (event) => {
-  const addButton = event.target.closest("[data-add]");
-  if (!addButton) return;
-  softTap();
-  addToCart({
-    name: addButton.dataset.add,
-    option: addButton.dataset.option || "",
-    price: addButton.dataset.price || "",
-    prompts: addButton.dataset.prompts ? addButton.dataset.prompts.split("||") : []
-  });
-});
 
 function addToCart(item) {
   const key = `${item.name}||${item.option}||${item.price}`;
-  const existing = cart.find(cartItem => cartItem.key === key);
-  if (existing) {
-    existing.qty += 1;
-    if ((!existing.prompts || !existing.prompts.length) && item.prompts && item.prompts.length) existing.prompts = item.prompts;
-  } else {
-    cart.push({ ...item, key, qty: 1, prompts: item.prompts || [] });
-  }
+  const existing = cart.find(entry => entry.key === key);
+  if (existing) existing.qty += 1;
+  else cart.push({ ...item, key, qty: 1, prompts: item.prompts || [] });
   saveCart();
-  showToast("✓ Added");
-  pulseCart();
-}
-
-function updateQty(key, change) {
-  const item = cart.find(cartItem => cartItem.key === key);
-  if (!item) return;
-  item.qty += change;
-  if (item.qty <= 0) cart = cart.filter(cartItem => cartItem.key !== key);
-  saveCart();
-}
-
-function removeFromCart(key) {
-  cart = cart.filter(cartItem => cartItem.key !== key);
-  saveCart();
-}
-
-function totalItems() {
-  return cart.reduce((sum, item) => sum + item.qty, 0);
+  showToast("✓ Added to your order");
 }
 
 function renderCart() {
-  const total = totalItems();
-  cartCount.textContent = total;
-  cartCount.hidden = total === 0;
-  cartFloat.classList.toggle("has-items", total > 0);
+  const count = totalItems();
+  const total = totalPrice();
+  orderBar.hidden = count === 0;
+  orderBarCount.textContent = `${count} ${count === 1 ? "item" : "items"}`;
+  orderBarTotal.textContent = formatMoney(total);
+  cartTotal.textContent = formatMoney(total);
 
   if (!cart.length) {
-    cartBody.innerHTML = `<div class="empty-cart"><strong>Your order starts here.</strong><br>Tap <b>ADD TO CART</b> on any product to begin.</div>`;
+    cartBody.innerHTML = `<p class="empty-message">Your order is empty.</p>`;
     return;
   }
 
   cartBody.innerHTML = cart.map(item => `
     <div class="cart-item">
-      <div class="cart-item-main">
+      <div class="cart-item-copy">
         <strong>${escapeHtml(item.name)}</strong>
         ${item.option ? `<span>${escapeHtml(item.option)}</span>` : ""}
-        ${item.price ? `<em>${escapeHtml(item.price)}</em>` : ""}
+        <small>${escapeHtml(item.price)}</small>
       </div>
       <div class="qty-control">
-        <button type="button" data-qty="-1" data-key="${escapeHtml(item.key)}" aria-label="Decrease quantity">−</button>
-        <span>${item.qty}</span>
-        <button type="button" data-qty="1" data-key="${escapeHtml(item.key)}" aria-label="Increase quantity">+</button>
+        <button type="button" data-qty="-1" data-key="${escapeHtml(item.key)}" aria-label="Remove one">−</button>
+        <strong>${item.qty}</strong>
+        <button type="button" data-qty="1" data-key="${escapeHtml(item.key)}" aria-label="Add one">+</button>
       </div>
-      <button class="remove-item" type="button" data-remove="${escapeHtml(item.key)}" aria-label="Remove item">×</button>
     </div>
   `).join("");
 }
 
-function buildOrderMessage() {
-  if (!cart.length) {
-    return "Hi,\n\nI'd like to place an order.\n\nCollection / Delivery:";
-  }
-
-  const lines = cart.map(item => {
-    const optionLine = item.option ? ` - ${item.option}` : "";
-    return `• ${item.name}${optionLine} ×${item.qty}`;
-  }).join("\n");
-
-  const promptSections = cart
-    .filter(item => item.prompts && item.prompts.length)
-    .map(item => {
-      const header = `\n${item.name} ×${item.qty}`;
-      const promptLines = [];
-      for (let i = 1; i <= item.qty; i += 1) {
-        if (item.qty > 1) promptLines.push(`Bundle ${i}:`);
-        item.prompts.forEach(prompt => {
-          promptLines.push(`${prompt}:`);
-        });
-      }
-      return `${header}\n${promptLines.join("\n")}`;
-    });
-
-  const promptText = promptSections.length
-    ? `\n${promptSections.join("\n")}`
-    : "";
-
-  return `Hi,\n\nI'd like:\n\n${lines}${promptText}\n\nCollection / Delivery:`;
-}
-
-async function copyOrderMessage() {
-  const message = buildOrderMessage();
-  try {
-    await navigator.clipboard.writeText(message);
-    showToast("✓ Your order is ready to send");
-  } catch (error) {
-    showToast("Order ready to copy");
-  }
-  return message;
+function updateQty(key, amount) {
+  const item = cart.find(entry => entry.key === key);
+  if (!item) return;
+  item.qty += amount;
+  if (item.qty <= 0) cart = cart.filter(entry => entry.key !== key);
+  saveCart();
+  if (!cart.length) closeCart();
 }
 
 function openCart() {
+  if (!cart.length) return;
   softTap();
   cartOverlay.classList.add("open");
   cartDrawer.classList.add("open");
@@ -413,64 +268,105 @@ function openCart() {
 }
 
 function closeCart() {
-  softTap();
   cartOverlay.classList.remove("open");
   cartDrawer.classList.remove("open");
   cartOverlay.setAttribute("aria-hidden", "true");
   cartDrawer.setAttribute("aria-hidden", "true");
 }
 
-function pulseCart() {
-  cartFloat.classList.remove("cart-pop");
-  void cartFloat.offsetWidth;
-  cartFloat.classList.add("cart-pop");
+function buildOrderMessage() {
+  const lines = cart.map(item => `• ${item.name}${item.option ? ` - ${item.option}` : ""} ×${item.qty}`).join("\n");
+  const prompts = cart.filter(item => item.prompts?.length).map(item => `\n${item.name}:\n${item.prompts.map(prompt => `${prompt}:`).join("\n")}`).join("\n");
+  return `Hi Herts Vapes,\n\nI'd like:\n\n${lines}${prompts}\n\nCollection or delivery:`;
 }
 
-function showToast(message) {
-  toast.textContent = message;
-  toast.classList.add("show");
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => toast.classList.remove("show"), 1500);
+async function copyOrder() {
+  const message = buildOrderMessage();
+  try { await navigator.clipboard.writeText(message); }
+  catch { /* WhatsApp still receives the message directly. */ }
+  return message;
 }
 
-cartFloat.addEventListener("click", openCart);
+function setupLinks() {
+  const number = settings.whatsappNumber || "447885752823";
+  const username = settings.snapchatUsername || "herts.vps1";
+  const text = settings.defaultWhatsappText || "Hi Herts Vapes, I'd like to place an order.";
+  document.querySelectorAll("[data-whatsapp-link]").forEach(link => link.href = `https://wa.me/${number}?text=${encodeURIComponent(text)}`);
+  document.querySelectorAll("[data-snapchat-link]").forEach(link => link.href = `https://www.snapchat.com/add/${username}`);
+}
+
+renderCategories();
+setupLinks();
+renderCart();
+
+document.querySelectorAll("[data-scroll]").forEach(button => button.addEventListener("click", () => {
+  softTap();
+  document.querySelector(button.dataset.scroll)?.scrollIntoView({ behavior: "smooth", block: "start" });
+}));
+
+categoryList.addEventListener("click", event => {
+  const categoryButton = event.target.closest(".category-button");
+  const productButton = event.target.closest(".product-button");
+  const addButton = event.target.closest("[data-add]");
+  if (categoryButton) { softTap(); toggleCategory(categoryButton.closest(".category")); return; }
+  if (productButton) { softTap(); toggleProduct(productButton.closest(".product-card")); return; }
+  if (addButton) {
+    softTap();
+    addToCart({
+      name: addButton.dataset.add,
+      option: addButton.dataset.option || "",
+      price: addButton.dataset.price || "",
+      prompts: addButton.dataset.prompts ? addButton.dataset.prompts.split("||") : []
+    });
+  }
+});
+
+moreToggle.addEventListener("click", () => {
+  softTap();
+  const opening = moreContent.hidden;
+  moreContent.hidden = !opening;
+  moreToggle.setAttribute("aria-expanded", String(opening));
+});
+
+moreContent.addEventListener("click", event => {
+  const bulkLink = event.target.closest("#bulkLink");
+  if (!bulkLink) return;
+  const bulkContent = document.getElementById("bulkContent");
+  const opening = bulkContent.hidden;
+  if (opening) {
+    const bulk = inventory.bulk;
+    bulkContent.innerHTML = `
+      <div class="bulk-card">
+        <strong>Bulk Orders</strong>
+        <p>${escapeHtml(bulk.intro)}</p>
+        <p class="bulk-minimum">From £100</p>
+        <a class="bulk-button" href="${escapeHtml(bulk.link)}">Message for Bulk Prices</a>
+      </div>`;
+  }
+  bulkContent.hidden = !opening;
+});
+
+orderBar.addEventListener("click", openCart);
 cartOverlay.addEventListener("click", closeCart);
 cartClose.addEventListener("click", closeCart);
-
-cartBody.addEventListener("click", (event) => {
-  const qtyButton = event.target.closest("[data-qty]");
-  const removeButton = event.target.closest("[data-remove]");
-
-  if (qtyButton) {
-    softTap();
-    updateQty(qtyButton.dataset.key, Number(qtyButton.dataset.qty));
-  }
-
-  if (removeButton) {
-    softTap();
-    removeFromCart(removeButton.dataset.remove);
-  }
+cartBody.addEventListener("click", event => {
+  const button = event.target.closest("[data-qty]");
+  if (button) { softTap(); updateQty(button.dataset.key, Number(button.dataset.qty)); }
 });
-
 cartClear.addEventListener("click", () => {
-  softTap();
   cart = [];
   saveCart();
-  showToast("Cart cleared");
+  closeCart();
+  showToast("Order cleared");
 });
-
 cartWhatsapp.addEventListener("click", async () => {
-  softTap();
-  const message = await copyOrderMessage();
-  window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  const message = await copyOrder();
+  const number = settings.whatsappNumber || "447885752823";
+  window.location.href = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
 });
-
 cartSnapchat.addEventListener("click", async () => {
-  softTap();
-  await copyOrderMessage();
-  showToast("✓ Order copied. Paste into Snapchat.");
-  setTimeout(() => window.open("https://www.snapchat.com/add/herts.vps1", "_blank"), 350);
+  await copyOrder();
+  showToast("✓ Order copied");
+  const username = settings.snapchatUsername || "herts.vps1";
+  setTimeout(() => window.open(`https://www.snapchat.com/add/${username}`, "_blank"), 300);
 });
-
-// Final public clean build marker. Functionality above is unchanged.
-window.HERTS_VAPES_BUILD = "ux-v3-polished-clean";
