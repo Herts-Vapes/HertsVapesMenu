@@ -61,8 +61,8 @@ window.HV_INVENTORY = {
       { name: "Lost Mary BM6000", price: "£10", meta: "11 flavours available", popular: true, flavours: ["Summer Grape", "Pineapple Ice", "Cherry Cola", "Cherry Ice", "Strawberry Raspberry Cherry Ice", "Banana Ice", "Triple Mango", "Blueberry Sour Raspberry", "Double Apple", "Blueberry Cherry Cranberry", "Orange Bru"] },
       { name: "Hayati Dual Flavour 25000", price: "£15", meta: "5 flavour combinations", flavours: ["Strawberry Cranberry Cherry / Strawberry Raspberry Ice", "Blue Razz Cherry / Blue Razz Gummy Bear", "Blueberry Cotton Candy / Raspberry Cotton Candy", "Strawberry Cranberry Cherry / Cherry Ice", "Kiwi Banana / Strawberry Banana"] },
       { name: "Enjoy Ultra 9000", price: "£10", meta: "2 flavours available", flavours: ["Berry Apple Peach", "Apple Watermelon Strawberry"] },
-      { name: "Pixl 8000", price: "£10", meta: "Black Cherry", flavours: ["Black Cherry"], simple: true },
-      { name: "Hayati Pro Max 6000", price: "£10", meta: "Fizzy Cherry", flavours: ["Fizzy Cherry"], simple: true },
+      { name: "Pixl 8000", price: "£10", meta: "1 flavour available", flavours: ["Black Cherry"] },
+      { name: "Hayati Pro Max 6000", price: "£10", meta: "1 flavour available", flavours: ["Fizzy Cherry"] },
       { name: "Elux Legend 3500", price: "£5", meta: "5 flavours available", flavours: ["Cherry Ice", "Fizzy Cherry", "Cherry Sours", "Pineapple Ice", "Watermelon Cherry Raspberry Ice"] }
     ]
   },
