@@ -58,41 +58,139 @@ window.HV_INVENTORY = {
   disposable: {
     title: "Disposable Vapes",
     items: [
-      { name: "Lost Mary BM6000", price: "£10", meta: "11 flavours available", popular: true, flavours: ["Summer Grape", "Pineapple Ice", "Cherry Cola", "Cherry Ice", "Strawberry Raspberry Cherry Ice", "Banana Ice", "Triple Mango", "Blueberry Sour Raspberry", "Double Apple", "Blueberry Cherry Cranberry", "Orange Bru"] },
-      { name: "Hayati Dual Flavour 25000", price: "£15", meta: "5 flavour combinations", flavours: ["Strawberry Cranberry Cherry / Strawberry Raspberry Ice", "Blue Razz Cherry / Blue Razz Gummy Bear", "Blueberry Cotton Candy / Raspberry Cotton Candy", "Strawberry Cranberry Cherry / Cherry Ice", "Kiwi Banana / Strawberry Banana"] },
-      { name: "Enjoy Ultra 9000", price: "£10", meta: "2 flavours available", flavours: ["Berry Apple Peach", "Apple Watermelon Strawberry"] },
-      { name: "Pixl 8000", price: "£10", meta: "1 flavour available", flavours: ["Black Cherry"] },
-      { name: "Hayati Pro Max 6000", price: "£10", meta: "1 flavour available", flavours: ["Fizzy Cherry"] },
-      { name: "Elux Legend 3500", price: "£5", meta: "5 flavours available", flavours: ["Cherry Ice", "Fizzy Cherry", "Cherry Sours", "Pineapple Ice", "Watermelon Cherry Raspberry Ice"] }
+      {
+        name: "Lost Mary BM6000",
+        price: "£10",
+        meta: "13 flavours available",
+        popular: true,
+        flavours: [
+          "Summer Grape",
+          "Cherry Ice",
+          "Banana Ice",
+          "Blueberry Cherry Cranberry",
+          "Orange Bru",
+          "Cherry Cola",
+          "Strawberry Raspberry Cherry Ice",
+          "Triple Mango",
+          "Double Apple",
+          "Fizzy Cherry",
+          "Mr Blue",
+          "Juicy Peach",
+          "Blueberry Sour Raspberry"
+        ]
+      },
+      {
+        name: "Hayati Dual Flavour 25000",
+        price: "£15",
+        meta: "5 flavour combinations",
+        flavours: [
+          "Strawberry Cranberry Cherry / Strawberry Raspberry Ice",
+          "Blue Razz Cherry / Blue Razz Gummy Bear",
+          "Blueberry Cotton Candy / Raspberry Cotton Candy",
+          "Strawberry Cranberry Cherry / Cherry Ice",
+          "Kiwi Banana / Strawberry Banana"
+        ]
+      },
+      {
+        name: "Enjoy Ultra 9000",
+        price: "£10",
+        meta: "2 flavours available",
+        flavours: ["Berry Apple Peach", "Apple Watermelon Strawberry"]
+      },
+      {
+        name: "Pixl 8000",
+        price: "£10",
+        meta: "3 flavours available",
+        flavours: ["Black Cherry", "Sour Pineapple Mango", "Cherry Sour Raspberry"]
+      },
+      {
+        name: "Hayati Pro Max 6000",
+        price: "£10",
+        meta: "3 flavours available",
+        flavours: ["Fizzy Cherry", "Blue Fusion", "Mango Peach Pineapple"]
+      },
+      {
+        name: "Elux Legend 3500",
+        price: "£5",
+        meta: "5 flavours available",
+        flavours: ["Cherry Ice", "Fizzy Cherry", "Cherry Sours", "Pineapple Ice", "Watermelon Cherry Raspberry Ice"]
+      }
     ]
   },
 
   podkits: {
     title: "Pod Kits",
     items: [
-      { name: "Vaporesso XROS Pro 2.0", price: "£25", meta: "Body kit • comes with 2 pods", details: ["Glittering Black", "Glittering Silver", "Gem Green"] }
+      {
+        name: "Vaporesso XROS Pro 2.0",
+        price: "£25",
+        meta: "Body kit • comes with 2 pods",
+        details: ["Glittering Black", "Glittering Silver", "Glittering Gold"]
+      }
     ]
   },
 
   salts: {
     title: "Nic Salts",
     items: [
-      { name: "Elux Legend Nic Salts", price: "£2.50", meta: "20mg • 25 flavours available", popular: true, flavours: ["Mr Blue", "Blueberry Cranberry Cherry", "Blue Razz Gummy", "Blackberry Ice", "Banana Ice", "Gummy Bear", "Fizzy Cherry", "Watermelon Ice", "Blueberry Sour Raspberry", "Cherry Ice", "Blue Razz Cherry", "Cherry Sour Raspberry", "Grape", "Lemon Lime", "Strawberry Raspberry Cherry", "Cola", "Juicy Peach", "Pineapple Ice", "Hubba Bubba", "Lemonade", "Raspberry Peach", "Triple Mango", "Raspberry Watermelon", "Black Cherry", "Triple Melon"] }
+      {
+        name: "Elux Legend Nic Salts",
+        price: "£2.50",
+        meta: "20mg • 26 flavours available",
+        popular: true,
+        flavours: [
+          "Mr Blue",
+          "Blueberry Cranberry Cherry",
+          "Blue Razz Gummy",
+          "Blackberry Ice",
+          "Banana Ice",
+          "Gummy Bear",
+          "Fizzy Cherry",
+          "Watermelon Ice",
+          "Blueberry Sour Raspberry",
+          "Cherry Ice",
+          "Blue Razz Cherry",
+          "Cherry Sour Raspberry",
+          "Grape",
+          "Lemon Lime",
+          "Strawberry Raspberry Cherry",
+          "Cola",
+          "Juicy Peach",
+          "Pineapple Ice",
+          "Hubba Bubba",
+          "Lemonade",
+          "Raspberry Peach",
+          "Triple Mango",
+          "Raspberry Watermelon",
+          "Black Cherry",
+          "Triple Melon",
+          "Oasis"
+        ]
+      }
     ]
   },
 
   pods: {
     title: "Replacement Pods",
     items: [
-      { name: "XROS Corex Pods", meta: "0.6Ω", pricing: [{ label: "1 Pod", price: "£5" }, { label: "Pack of 4", price: "£15" }], saving: "Save £5" }
+      {
+        name: "XROS Corex Pods",
+        meta: "0.6Ω",
+        pricing: [{ label: "1 Pod", price: "£5" }, { label: "Pack of 4", price: "£15" }],
+        saving: "Save £5"
+      }
     ]
   },
 
   pouches: {
     title: "Nicotine Pouches",
     items: [
-      { name: "VELO", meta: "Minty Lemon • 10mg", pricing: [{ label: "1 Box", price: "£5" }, { label: "Pack of 5", price: "£20" }], saving: "Save £5" },
-      { name: "Pablo", meta: "Frosted Mint • 50mg", pricing: [{ label: "1 Box", price: "£5" }, { label: "Pack of 5", price: "£20" }], saving: "Save £5" }
+      {
+        name: "Pablo",
+        meta: "Frosted Mint • 50mg",
+        pricing: [{ label: "1 Box", price: "£5" }, { label: "Pack of 5", price: "£20" }],
+        saving: "Save £5"
+      }
     ]
   },
 
@@ -103,7 +201,12 @@ window.HV_INVENTORY = {
     menuSubline: "Amber Leaf Original",
     menuImage: "assets/categories/tobacco.png",
     items: [
-      { name: "Amber Leaf Original", meta: "50g", pricing: [{ label: "50g", price: "£30" }, { label: "2 Packs", price: "£55" }], saving: "Save £5" }
+      {
+        name: "Amber Leaf Original",
+        meta: "50g",
+        pricing: [{ label: "50g", price: "£30" }, { label: "2 Packs", price: "£55" }],
+        saving: "Save £5"
+      }
     ]
   },
 
@@ -119,4 +222,4 @@ window.HV_INVENTORY = {
     minimum: "Available on bulk pre-orders from £100.",
     link: "https://wa.me/447885752823?text=Hi%20Herts%20Vapes%2C%0A%0AI%27m%20interested%20in%20your%20bulk%20prices.%0A%0AProducts%20I%27m%20interested%20in%3A%0A%0A%E2%80%A2"
   }
-};;
+};
