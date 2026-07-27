@@ -218,6 +218,7 @@ function toggleCategory(section) {
   const button = section.querySelector(".category-button");
   const content = section.querySelector(".category-content");
   const opening = content.hidden;
+  const anchorTop = button.getBoundingClientRect().top;
 
   if (opening) {
     categoryList.querySelectorAll(".category.open").forEach(openSection => {
@@ -232,6 +233,13 @@ function toggleCategory(section) {
     content.dataset.loaded = "true";
   }
   content.hidden = !opening;
+
+  // Keep the category the customer tapped in the same place on screen when
+  // an open category above it closes. This prevents the page from jumping.
+  if (opening) {
+    const movedBy = button.getBoundingClientRect().top - anchorTop;
+    if (Math.abs(movedBy) > 1) window.scrollBy(0, movedBy);
+  }
 }
 
 function toggleProduct(card) {
