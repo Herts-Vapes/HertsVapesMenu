@@ -76,6 +76,23 @@ function showToast(message = "✓ Added") {
   toastTimer = setTimeout(() => toast.classList.remove("show"), 1200);
 }
 
+function showAddedFeedback(button) {
+  if (!button) return;
+  const label = button.querySelector("strong");
+  const originalText = label ? label.textContent : button.textContent;
+  button.classList.add("just-added");
+  if (label) label.textContent = "Added ✓";
+  else button.textContent = "Added ✓";
+  orderBar.classList.remove("cart-updated");
+  void orderBar.offsetWidth;
+  orderBar.classList.add("cart-updated");
+  setTimeout(() => {
+    button.classList.remove("just-added");
+    if (label) label.textContent = originalText;
+    else button.textContent = originalText;
+  }, 700);
+}
+
 function categoryData(key) {
   if (key === "podsandkits") {
     return {
@@ -146,7 +163,7 @@ function renderProduct(product) {
         ${needsChoice ? `<span class="product-arrow" aria-hidden="true">⌄</span>` : ""}
       </button>
       ${product.pricing ? renderPricing(product) : ""}
-      ${needsChoice ? `<div class="product-options" hidden>${renderChoices(product, choices)}</div>` : renderQuickAdd(product)}
+      ${needsChoice ? `<div class="product-options ${choices.length >= 8 ? "two-column" : ""}" hidden>${renderChoices(product, choices)}</div>` : renderQuickAdd(product)}
     </article>
   `;
 }
@@ -188,10 +205,26 @@ function renderDeal(deal) {
   `;
 }
 
+function closeCategory(section) {
+  const button = section.querySelector(".category-button");
+  const content = section.querySelector(".category-content");
+  if (!button || !content) return;
+  button.setAttribute("aria-expanded", "false");
+  section.classList.remove("open");
+  content.hidden = true;
+}
+
 function toggleCategory(section) {
   const button = section.querySelector(".category-button");
   const content = section.querySelector(".category-content");
   const opening = content.hidden;
+
+  if (opening) {
+    categoryList.querySelectorAll(".category.open").forEach(openSection => {
+      if (openSection !== section) closeCategory(openSection);
+    });
+  }
+
   button.setAttribute("aria-expanded", String(opening));
   section.classList.toggle("open", opening);
   if (opening && !content.dataset.loaded) {
@@ -318,6 +351,7 @@ categoryList.addEventListener("click", event => {
       price: addButton.dataset.price || "",
       prompts: addButton.dataset.prompts ? addButton.dataset.prompts.split("||") : []
     });
+    showAddedFeedback(addButton);
   }
 });
 
