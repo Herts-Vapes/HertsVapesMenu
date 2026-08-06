@@ -147,17 +147,35 @@ function productImageFor(name) {
   return "";
 }
 
+function productMeta(product) {
+  const rawMeta = String(product.meta || "");
+  if (!Array.isArray(product.flavours)) return rawMeta;
+
+  const count = product.flavours.length;
+  const isCombination = /flavour combinations/i.test(rawMeta);
+  const countLabel = isCombination
+    ? `${count} flavour ${count === 1 ? "combination" : "combinations"}`
+    : `${count} ${count === 1 ? "flavour" : "flavours"} available`;
+  const baseMeta = rawMeta
+    .replace(/\s*•?\s*\d+\s+flavours?\s+available/gi, "")
+    .replace(/\s*•?\s*\d+\s+flavour\s+combinations?/gi, "")
+    .trim();
+
+  return [baseMeta, countLabel].filter(Boolean).join(" • ");
+}
+
 function renderProduct(product) {
   const choices = product.flavours || product.details || [];
   const image = productImageFor(product.name);
   const needsChoice = choices.length > 0;
+  const meta = productMeta(product);
   return `
     <article class="product-card ${needsChoice ? "has-options" : ""}">
       <button class="product-button" type="button" ${needsChoice ? "" : "disabled"} aria-expanded="false">
         ${image ? `<span class="product-image"><img src="${image}" alt="" loading="lazy"></span>` : ""}
         <span class="product-copy">
           <strong>${escapeHtml(product.name)}</strong>
-          <small>${escapeHtml(product.meta || "")}</small>
+          <small>${escapeHtml(meta)}</small>
         </span>
         ${product.price ? `<span class="product-price">${escapeHtml(product.price)}</span>` : ""}
         ${needsChoice ? `<span class="product-arrow" aria-hidden="true">⌄</span>` : ""}
