@@ -58,7 +58,7 @@ window.HV_INVENTORY = {
   disposable: {
     title: "Disposable Vapes",
     items: [
-      { name: "Lost Mary BM6000", price: "£10", meta: "13 flavours available", popular: true, flavours: ["Cherry Cola", "Cherry Ice", "Strawberry Raspberry Cherry Ice", "Banana Ice", "Double Apple", "Blueberry Cherry Cranberry", "Orange Bru", "Fizzy Cherry", "Mr Blue", "Juicy Peach", "Pineapple Ice", "Lemon Lime", "Blueberry Sour Raspberry"] },
+      { name: "Lost Mary BM6000", price: "£10", meta: "11 flavours available", popular: true, flavours: ["Cherry Cola", "Strawberry Raspberry Cherry Ice", "Banana Ice", "Double Apple", "Orange Bru", "Fizzy Cherry", "Mr Blue", "Juicy Peach", "Pineapple Ice", "Lemon Lime", "Blueberry Sour Raspberry"] },
       { name: "Hayati Dual Flavour 25000", price: "£15", meta: "4 flavour combinations", flavours: ["Strawberry Cranberry Cherry / Strawberry Raspberry Ice", "Blueberry Cotton Candy / Raspberry Cotton Candy", "Strawberry Cranberry Cherry / Cherry Ice", "Kiwi Banana / Strawberry Banana"] },
       { name: "Enjoy Ultra 9000", price: "£10", meta: "2 flavours available", flavours: ["Berry Apple Peach", "Apple Watermelon Strawberry"] },
       { name: "Pixl 8000", price: "£10", meta: "3 flavours available", flavours: ["Black Cherry", "Sour Pineapple Mango", "Cherry Sour Raspberry"] },
