@@ -6,6 +6,20 @@ window.HV_INVENTORY = {
     items: [
       {
         name: "Vaporesso XROS Pro 2.0",
+        subline: "+ 4 Pods + 4 Nic Salts",
+        price: "£40",
+        meta: "Complete XROS bundle",
+        saving: "Save £10",
+        confirm: "Flavours confirmed in message",
+        visuals: [
+          { label: "XROS Pro 2.0" },
+          { label: "XROS Pods", qty: "×4" },
+          { label: "Nic Salts", qty: "×4" }
+        ],
+        prompts: ["Kit colour", "Nic Salt 1", "Nic Salt 2", "Nic Salt 3", "Nic Salt 4"]
+      },
+      {
+        name: "Vaporesso XROS Pro 2.0",
         subline: "+ 4 Nic Salts",
         price: "£30",
         meta: "Kit bundle",
@@ -59,20 +73,6 @@ window.HV_INVENTORY = {
         confirm: "Flavours confirmed in message",
         visuals: [{ label: "Enjoy Ultra 9000", qty: "×2" }],
         prompts: ["Enjoy Ultra 1", "Enjoy Ultra 2"]
-      },
-      {
-        name: "Vaporesso XROS Pro 2.0",
-        subline: "+ 4 Pods + 4 Nic Salts",
-        price: "£40",
-        meta: "Complete XROS bundle",
-        saving: "Save £10",
-        confirm: "Flavours confirmed in message",
-        visuals: [
-          { label: "XROS Pro 2.0" },
-          { label: "XROS Pods", qty: "×4" },
-          { label: "Nic Salts", qty: "×4" }
-        ],
-        prompts: ["Kit colour", "Nic Salt 1", "Nic Salt 2", "Nic Salt 3", "Nic Salt 4"]
       }
     ]
   },
