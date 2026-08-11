@@ -43,14 +43,36 @@ window.HV_INVENTORY = {
         prompts: ["Flavour 1", "Flavour 2", "Flavour 3"]
       },
       {
-        name: "2 Lost Mary BM6000",
-        subline: "+ 1 Hayati 25K",
-        price: "£30",
-        meta: "Mixed disposable bundle",
+        name: "3 Lost Mary BM6000",
+        price: "£25",
+        meta: "BM6000 bundle",
         saving: "Save £5",
         confirm: "Flavours confirmed in message",
-        visuals: [{ label: "Lost Mary", qty: "×2" }, { label: "Hayati 25K" }],
-        prompts: ["Lost Mary 1", "Lost Mary 2", "Hayati 25K"]
+        visuals: [{ label: "Lost Mary BM6000", qty: "×3" }],
+        prompts: ["Lost Mary 1", "Lost Mary 2", "Lost Mary 3"]
+      },
+      {
+        name: "2 Enjoy Ultra 9000",
+        price: "£15",
+        meta: "Clearance bundle",
+        saving: "Save £5",
+        confirm: "Flavours confirmed in message",
+        visuals: [{ label: "Enjoy Ultra 9000", qty: "×2" }],
+        prompts: ["Enjoy Ultra 1", "Enjoy Ultra 2"]
+      },
+      {
+        name: "Vaporesso XROS Pro 2.0",
+        subline: "+ 4 Pods + 4 Nic Salts",
+        price: "£40",
+        meta: "Complete XROS bundle",
+        saving: "Save £10",
+        confirm: "Flavours confirmed in message",
+        visuals: [
+          { label: "XROS Pro 2.0" },
+          { label: "XROS Pods", qty: "×4" },
+          { label: "Nic Salts", qty: "×4" }
+        ],
+        prompts: ["Kit colour", "Nic Salt 1", "Nic Salt 2", "Nic Salt 3", "Nic Salt 4"]
       }
     ]
   },
