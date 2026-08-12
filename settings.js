@@ -2,5 +2,5 @@
 window.HV_SETTINGS = {
   whatsappNumber: "447885752823",
   snapchatUsername: "herts.vps1",
-  defaultWhatsappText: "Hi Herts Vapes, I'd like to place an order."
+  defaultWhatsappText: "Hi Herts Vapes"
 };
