@@ -13,12 +13,15 @@ button{cursor:pointer}
 .hero-logo-mark span:last-child{color:var(--red);text-shadow:0 0 28px rgba(237,28,43,.3)}
 .hero-brand{margin-top:18px;font-size:clamp(38px,11vw,68px);font-weight:950;text-transform:uppercase;letter-spacing:-.06em;transform:skew(-7deg)}
 .hero-brand strong{color:var(--red)}
-.hero-tagline{margin:18px 0 42px;color:#ddd;font-weight:900;letter-spacing:.22em;text-transform:uppercase;font-size:13px}
-.hero-cta{width:100%;min-height:70px;border:1px solid rgba(255,255,255,.08);border-radius:20px;background:linear-gradient(180deg,var(--red-bright),#bd0010);color:#fff;font-weight:950;font-size:22px;display:flex;align-items:center;justify-content:center;gap:12px;box-shadow:0 18px 42px rgba(237,28,43,.24);transition:transform .16s ease,box-shadow .16s ease}
-.hero-contact-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
-.hero-contact-button{min-height:58px;border-radius:17px;display:grid;place-items:center;text-decoration:none;font-weight:950;transition:transform .16s ease,filter .16s ease,box-shadow .16s ease}
-.hero-contact-button.whatsapp{color:#fff;border:1px solid rgba(255,255,255,.16);background:linear-gradient(180deg,#24b962,#168a43);box-shadow:0 12px 28px rgba(31,168,85,.2)}
-.hero-contact-button.snapchat{color:#111;border:1px solid rgba(255,255,255,.4);background:linear-gradient(180deg,#fffc25,#f0ed00);box-shadow:0 12px 28px rgba(255,252,0,.13)}
+.hero-tagline{margin:18px 0 30px;color:#ddd;font-weight:900;letter-spacing:.22em;text-transform:uppercase;font-size:13px}
+.hero-connect-intro{display:grid;gap:6px;margin-bottom:14px}.hero-connect-intro strong{font-size:18px;font-weight:950;text-transform:uppercase;letter-spacing:.02em}.hero-connect-intro span{color:#aaa;font-size:13px;font-weight:800;letter-spacing:.05em}
+.hero-contact-actions{display:grid;grid-template-columns:1fr;gap:12px}
+.hero-contact-button{min-height:74px;border-radius:20px;display:grid;place-items:center;gap:4px;padding:12px 16px;text-decoration:none;font-weight:950;transition:transform .16s ease,filter .16s ease,box-shadow .16s ease}
+.hero-contact-main{font-size:20px;line-height:1.05}.hero-contact-sub{font-size:12px;font-weight:850;opacity:.72;letter-spacing:.02em}
+.hero-contact-button.whatsapp{color:#fff;border:1px solid rgba(255,255,255,.16);background:linear-gradient(180deg,#24b962,#168a43);box-shadow:0 14px 32px rgba(31,168,85,.22)}
+.hero-contact-button.snapchat{min-height:82px;color:#111;border:1px solid rgba(255,255,255,.5);background:linear-gradient(180deg,#fffc25,#f0ed00);box-shadow:0 16px 36px rgba(255,252,0,.16)}
+.hero-contact-button.snapchat .hero-contact-main{font-size:22px}
+.hero-cta{width:100%;min-height:58px;margin-top:14px;border:1px solid rgba(255,255,255,.14);border-radius:17px;background:rgba(255,255,255,.045);color:#fff;font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 12px 30px rgba(0,0,0,.28);transition:transform .16s ease,box-shadow .16s ease,background .16s ease}
 .hero-cta:active,.hero-contact-button:active,.category-button:active,.choice-button:active,.quick-add:active,.order-bar:active,.send-button:active{transform:scale(.985)}
 .shop{padding:32px 14px 150px;background:radial-gradient(circle at 100% 3%,rgba(237,28,43,.08),transparent 21%)}
 .shop-header{position:relative;isolation:isolate;margin:0 0 24px;padding:25px 18px 22px;text-align:center;border:1px solid rgba(255,255,255,.105);border-radius:24px;overflow:hidden;background:radial-gradient(circle at 50% 0,rgba(237,28,43,.18),transparent 48%),linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.012));box-shadow:inset 0 1px rgba(255,255,255,.045),0 18px 42px rgba(0,0,0,.3)}
@@ -66,8 +69,8 @@ button{cursor:pointer}
 @keyframes smokeDrift{0%{transform:translate3d(-18px,-8px,0) scale(.95);opacity:.14}55%{transform:translate3d(30px,20px,0) scale(1.08);opacity:.22}100%{transform:translate3d(5px,-18px,0) scale(1);opacity:.17}}
 @keyframes contentReveal{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:translateY(0)}}
 @keyframes cartPulse{50%{transform:scale(1.045);filter:brightness(1.1)}}
-@media(hover:hover){.hero-cta:hover{box-shadow:0 20px 48px rgba(237,28,43,.32)}.hero-contact-button:hover{filter:brightness(1.06);transform:translateY(-1px)}.choice-button:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}}
+@media(hover:hover){.hero-cta:hover{background:rgba(255,255,255,.075);box-shadow:0 16px 34px rgba(0,0,0,.35)}.hero-contact-button:hover{filter:brightness(1.06);transform:translateY(-1px)}.choice-button:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}}
 @media(max-width:430px){.product-options.two-column{gap:6px}.product-options.two-column .choice-button{padding:10px 9px}.product-options.two-column .choice-button span{font-size:12.5px}.product-options.two-column .choice-button strong{font-size:11px}}
-@media(max-width:350px){.product-options.two-column{grid-template-columns:1fr}.hero-contact-actions{grid-template-columns:1fr}.category-title{font-size:17px}}
+@media(max-width:350px){.product-options.two-column{grid-template-columns:1fr}.category-title{font-size:17px}.hero-contact-main{font-size:18px}.hero-contact-button.snapchat .hero-contact-main{font-size:20px}}
 @media(max-width:390px){.category-title{font-size:18px}.product-button{grid-template-columns:48px 1fr auto auto}.product-image,.product-image img{max-width:48px;max-height:48px}.order-bar-action{font-size:13px;padding:11px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
