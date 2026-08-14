@@ -1,5 +1,7 @@
-Verified stock update:
-- Elux Legend Nic Salts contains Cherry Ice
-- Elux Legend Nic Salts meta says 25 flavours available
-- script.js uses inventory.js as the single inventory source
-- index.html loads settings.js, inventory.js, then script.js with a fresh cache-busting version
+Verified stock update — 14 Aug 2026:
+- Lost Mary BM6000 now has 9 flavours available
+- Removed: Mr Blue
+- Removed: Blueberry Sour Raspberry
+- Remaining: Cherry Cola; Strawberry Raspberry Cherry Ice; Banana Ice; Double Apple; Orange Bru; Fizzy Cherry; Juicy Peach; Pineapple Ice; Lemon Lime
+- index.html uses a fresh cache-busting version for inventory.js and script.js
+- No other stock, prices, deals, settings, styling, or functionality changed
