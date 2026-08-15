@@ -80,10 +80,10 @@ window.HV_INVENTORY = {
   disposable: {
     title: "Disposable Vapes",
     items: [
-      { name: "Lost Mary BM6000", price: "£10", meta: "9 flavours available", popular: true, flavours: ["Cherry Cola", "Strawberry Raspberry Cherry Ice", "Banana Ice", "Double Apple", "Orange Bru", "Fizzy Cherry", "Juicy Peach", "Pineapple Ice", "Lemon Lime"] },
-      { name: "Hayati Dual Flavour 25000", price: "£15", meta: "4 flavour combinations", flavours: ["Strawberry Cranberry Cherry / Strawberry Raspberry Ice", "Blueberry Cotton Candy / Raspberry Cotton Candy", "Strawberry Cranberry Cherry / Cherry Ice", "Kiwi Banana / Strawberry Banana"] },
+      { name: "Lost Mary BM6000", price: "£10", meta: "13 flavours available", popular: true, flavours: ["Cherry Cola", "Strawberry Raspberry Cherry Ice", "Banana Ice", "Double Apple", "Orange Bru", "Fizzy Cherry", "Juicy Peach", "Pineapple Ice", "Lemon Lime", "Blueberry Sour Raspberry", "Strawberry Ice", "Blueberry Cherry Cranberry", "Triple Mango"] },
+      { name: "Hayati Dual Flavour 25000", price: "£15", meta: "5 flavour combinations", flavours: ["Strawberry Cranberry Cherry / Strawberry Raspberry Ice", "Blueberry Cotton Candy / Raspberry Cotton Candy", "Strawberry Cranberry Cherry / Cherry Ice", "Kiwi Banana / Strawberry Banana", "Peach Mango / Cherry Ice"] },
       { name: "Enjoy Ultra 9000", price: "£10", meta: "2 flavours available", flavours: ["Berry Apple Peach", "Apple Watermelon Strawberry"] },
-      { name: "Pixl 8000", price: "£10", meta: "3 flavours available", flavours: ["Black Cherry", "Sour Pineapple Mango", "Cherry Sour Raspberry"] },
+      { name: "Pixl 8000", price: "£10", meta: "2 flavours available", flavours: ["Black Cherry", "Sour Pineapple Mango"] },
       { name: "Hayati Pro Max 6000", price: "£10", meta: "3 flavours available", flavours: ["Blue Fusion", "Fizzy Cherry", "Mango Peach Pineapple"] },
       { name: "Elux Legend 3500", price: "£5", meta: "5 flavours available", flavours: ["Cherry Ice", "Fizzy Cherry", "Cherry Sours", "Pineapple Ice", "Watermelon Cherry Raspberry Ice"] }
     ]
@@ -99,7 +99,7 @@ window.HV_INVENTORY = {
   salts: {
     title: "Nic Salts",
     items: [
-      { name: "Elux Legend Nic Salts", price: "£2.50", meta: "20mg • 27 flavours available", popular: true, flavours: ["Mr Blue", "Blueberry Cranberry Cherry", "Blue Razz Gummy", "Blackberry Ice", "Banana Ice", "Gummy Bear", "Fizzy Cherry", "Watermelon Ice", "Blueberry Sour Raspberry", "Cherry Ice", "Blue Razz Cherry", "Cherry Sour Raspberry", "Grape", "Lemon Lime", "Strawberry Raspberry Cherry", "Juicy Peach", "Pineapple Ice", "Hubba Bubba", "Lemonade", "Raspberry Peach", "Triple Mango", "Raspberry Watermelon", "Oasis", "Black Cherry", "Triple Melon", "Strawberry Ice Cream", "Cherry Lime"] }
+      { name: "Elux Legend Nic Salts", price: "£2.50", meta: "20mg • 28 flavours available", popular: true, flavours: ["Mr Blue", "Blueberry Cranberry Cherry", "Blue Razz Gummy", "Blackberry Ice", "Banana Ice", "Gummy Bear", "Fizzy Cherry", "Watermelon Ice", "Blueberry Sour Raspberry", "Cherry Ice", "Blue Razz Cherry", "Cherry Sour Raspberry", "Grape", "Lemon Lime", "Strawberry Raspberry Cherry", "Juicy Peach", "Pineapple Ice", "Hubba Bubba", "Lemonade", "Raspberry Peach", "Triple Mango", "Raspberry Watermelon", "Oasis", "Black Cherry", "Triple Melon", "Strawberry Ice Cream", "Cherry Lime", "Strawberry Ice"] }
     ]
   },
 
