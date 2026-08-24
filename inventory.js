@@ -80,10 +80,10 @@ window.HV_INVENTORY = {
   disposable: {
     title: "Disposable Vapes",
     items: [
-      { name: "Lost Mary BM6000", price: "£10", meta: "11 flavours available", popular: true, flavours: ["Strawberry Raspberry Cherry Ice", "Banana Ice", "Double Apple", "Orange Bru", "Fizzy Cherry", "Pineapple Ice", "Lemon Lime", "Blueberry Sour Raspberry", "Strawberry Ice", "Blueberry Cherry Cranberry", "Triple Mango"] },
-      { name: "Hayati Dual Flavour 25000", price: "£15", meta: "2 flavour combinations", flavours: ["Strawberry Cranberry Cherry / Cherry Ice", "Peach Mango / Cherry Ice"] },
+      { name: "Lost Mary BM6000", price: "£10", meta: "14 flavours available", popular: true, flavours: ["Strawberry Raspberry Cherry Ice", "Banana Ice", "Double Apple", "Orange Bru", "Fizzy Cherry", "Pineapple Ice", "Lemon Lime", "Blueberry Sour Raspberry", "Strawberry Ice", "Blueberry Cherry Cranberry", "Triple Mango", "Juicy Peach", "Summer Grape", "Strawberry Watermelon"] },
+      { name: "Hayati Dual Flavour 25000", price: "£15", meta: "4 flavour combinations", flavours: ["Strawberry Cranberry Cherry / Cherry Ice", "Peach Mango / Cherry Ice", "Fruit Bomb / Strawberry Watermelon Bubblegum", "Blueberry Raspberry / Blueberry Raspberry Cherry"] },
       { name: "Enjoy Ultra 9000", price: "£10", meta: "2 flavours available", flavours: ["Berry Apple Peach", "Apple Watermelon Strawberry"] },
-      { name: "Pixl 8000", price: "£10", meta: "1 flavour available", flavours: ["Sour Pineapple Mango"] },
+      { name: "Pixl 8000", price: "£10", meta: "3 flavours available", flavours: ["Sour Pineapple Mango", "Cherry Sour Raspberry", "Strawberry Burst"] },
       { name: "Hayati Pro Max 6000", price: "£10", meta: "3 flavours available", flavours: ["Blue Fusion", "Fizzy Cherry", "Mango Peach Pineapple"] },
       { name: "Elux Legend 3500", price: "£5", meta: "5 flavours available", flavours: ["Cherry Ice", "Fizzy Cherry", "Cherry Sours", "Pineapple Ice", "Watermelon Cherry Raspberry Ice"] }
     ]
@@ -92,7 +92,7 @@ window.HV_INVENTORY = {
   podkits: {
     title: "Pod Kits",
     items: [
-      { name: "Vaporesso XROS Pro 2.0", price: "£25", meta: "Body kit • comes with 2 pods", details: ["Glittering Gold"] }
+      { name: "Vaporesso XROS Pro 2.0", price: "£25", meta: "Body kit • comes with 2 pods", details: ["Glittering Gold", "Glittering Black"] }
     ]
   },
 
