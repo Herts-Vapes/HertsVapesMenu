@@ -24,9 +24,9 @@ let cart = loadCart();
 const MAIN_CATEGORIES = [
   { key: "disposable", title: "Disposable Vapes", image: "lostmary.png.png" },
   { key: "salts", title: "Nic Salts", image: "eluxnicsalt.png.png" },
+  { key: "special", title: "Bundle Deals", image: "hayati25k.png.png" },
   { key: "podsandkits", title: "Pods & Kits", image: "podkit.png.png" },
-  { key: "pouches", title: "Nicotine Pouches", image: "pablopouch.png.png" },
-  { key: "special", title: "Bundle Deals", image: "hayati25k.png.png" }
+  { key: "pouches", title: "Nicotine Pouches", image: "pablopouch.png.png" }
 ];
 
 function escapeHtml(value) {
@@ -174,6 +174,7 @@ function renderProduct(product) {
       <button class="product-button" type="button" ${needsChoice ? "" : "disabled"} aria-expanded="false">
         ${image ? `<span class="product-image"><img src="${image}" alt="" loading="lazy"></span>` : ""}
         <span class="product-copy">
+          ${product.popular ? `<span class="product-badge">Most Popular</span>` : ""}
           <strong>${escapeHtml(product.name)}</strong>
           <small>${escapeHtml(meta)}</small>
         </span>
@@ -216,6 +217,7 @@ function renderDeal(deal) {
   return `
     <article class="deal-card">
       <div class="deal-copy">
+        ${deal.bestValue ? `<span class="deal-best">Best Value</span>` : ""}
         <strong>${escapeHtml(deal.name)}</strong>
         <div class="deal-components">${components.map(component => `<span>${escapeHtml(component)}</span>`).join("")}</div>
       </div>
