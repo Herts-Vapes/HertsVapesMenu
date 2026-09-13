@@ -139,7 +139,7 @@ function productImageFor(name) {
   if (key.includes("elux legend 3500")) return "elux3500.png.png";
   if (key.includes("enjoy ultra")) return "enjoyultra.png.png";
   if (key.includes("pixl")) return "pixl8000.png.png";
-  if (key.includes("xros pro")) return "podkit.png.png";
+  if (key.includes("xros pro") || key.includes("xros 2.0 kit")) return "podkit.png.png";
   if (key.includes("nic salts")) return "eluxnicsalt.png.png";
   if (key.includes("corex") || key.includes("xros pods")) return "vaporessopod.png.png";
   if (key.includes("pablo")) return "pablopouch.png.png";
@@ -208,16 +208,21 @@ function renderPricing(product) {
 }
 
 function renderDeal(deal) {
-  const displayName = deal.subline ? `${deal.name} ${deal.subline}` : deal.name;
+  const displayName = deal.name;
   const prompts = escapeHtml((deal.prompts || []).join("||"));
+  const components = Array.isArray(deal.components) && deal.components.length
+    ? deal.components
+    : [deal.subline ? `${deal.name} ${deal.subline}` : deal.name];
   return `
     <article class="deal-card">
       <div class="deal-copy">
-        <small>${escapeHtml(deal.saving || "Bundle")}</small>
         <strong>${escapeHtml(deal.name)}</strong>
-        ${deal.subline ? `<span>${escapeHtml(deal.subline)}</span>` : ""}
+        <div class="deal-components">${components.map(component => `<span>${escapeHtml(component)}</span>`).join("")}</div>
       </div>
-      <div class="deal-price">${escapeHtml(deal.price)}</div>
+      <div class="deal-value">
+        <div class="deal-price">${escapeHtml(deal.price)}</div>
+        <small class="deal-saving">${escapeHtml(deal.saving || "Bundle")}</small>
+      </div>
       <button class="quick-add" type="button" data-add="${escapeHtml(displayName)}" data-price="${escapeHtml(deal.price)}" data-prompts="${prompts}">Add Bundle</button>
     </article>
   `;
