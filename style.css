@@ -5,35 +5,32 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica
 button,a{font:inherit;touch-action:manipulation}
 button{cursor:pointer}
 .site-shell{max-width:820px;margin:auto;min-height:100vh;background:var(--bg);overflow:hidden}
-.hero{position:relative;isolation:isolate;min-height:100svh;display:grid;place-items:center;padding:34px 20px 28px;overflow:hidden;background:radial-gradient(circle at 50% 30%,rgba(237,28,43,.18),transparent 34%),linear-gradient(180deg,#090000 0%,#050505 52%,#020202 100%)}
-.hero::before,.hero::after{content:"";position:absolute;z-index:-2;inset:auto;width:68vmax;height:68vmax;border-radius:50%;pointer-events:none;opacity:.18;filter:blur(58px);background:radial-gradient(circle,rgba(255,30,52,.95) 0,rgba(160,0,16,.3) 40%,transparent 72%);animation:smokeDrift 15s ease-in-out infinite alternate}
-.hero::before{left:-42vmax;top:-8vmax}.hero::after{right:-40vmax;bottom:-18vmax;animation-duration:19s;animation-direction:alternate-reverse}
-.hero-focus{position:relative;text-align:center;width:min(100%,560px)}
-.hero-focus::before,.hero-focus::after{content:"";position:absolute;z-index:-1;pointer-events:none;border-radius:999px;opacity:.95}
-.hero-focus::before{width:360px;height:360px;left:-265px;top:-140px;background:radial-gradient(circle at center,rgba(255,28,49,.24),transparent 62%)}
-.hero-focus::after{width:420px;height:420px;right:-305px;bottom:-240px;background:radial-gradient(circle at center,rgba(255,28,49,.18),transparent 64%)}
-.hero-logo-wrap{position:relative;display:inline-grid;place-items:center;padding:22px 28px 10px}
-.hero-logo-wrap::before{content:"";position:absolute;inset:0;border-radius:50%;border:3px solid rgba(237,28,43,.78);transform:rotate(-9deg);clip-path:inset(0 0 0 0 round 999px);filter:drop-shadow(0 0 16px rgba(237,28,43,.22))}
-.hero-logo-wrap::after{content:"";position:absolute;inset:16px 14px 12px 10px;background:radial-gradient(circle at 45% 40%,rgba(255,255,255,.05),transparent 58%);border-radius:50%;z-index:-1}
-.hero-logo-mark{display:flex;justify-content:center;align-items:flex-end;font-size:clamp(84px,24vw,150px);font-weight:1000;line-height:.72;letter-spacing:-.16em;font-style:italic;filter:drop-shadow(0 12px 28px rgba(0,0,0,.58))}
-.hero-logo-mark span:first-child{color:#f5f5f5;text-shadow:0 2px 0 rgba(255,255,255,.15)}
-.hero-logo-mark span:last-child{color:var(--red);text-shadow:0 0 28px rgba(237,28,43,.34)}
-.hero-brand{margin-top:6px;font-size:clamp(38px,10vw,68px);font-weight:1000;text-transform:uppercase;letter-spacing:-.065em;font-style:italic;line-height:.92;text-shadow:0 12px 24px rgba(0,0,0,.32)}
-.hero-brand strong{color:var(--red)}
-.hero-tagline{margin:16px 0 16px;color:#efefef;font-weight:900;letter-spacing:.34em;text-transform:uppercase;font-size:13px}
-.hero-separator{width:min(100%,420px);height:2px;margin:0 auto 18px;background:linear-gradient(90deg,transparent,rgba(237,28,43,.78),transparent);box-shadow:0 0 12px rgba(237,28,43,.4)}
-.hero-connect-intro{display:grid;gap:6px;margin:0 0 16px}.hero-connect-intro strong{font-size:20px;font-weight:1000;text-transform:uppercase;letter-spacing:.02em}.hero-connect-intro strong span{color:var(--red);font-size:1.15em;vertical-align:middle}.hero-connect-intro span{color:#bababa;font-size:13px;font-weight:800;letter-spacing:.04em}
-.hero-contact-actions{display:grid;grid-template-columns:1fr;gap:14px}
-.hero-contact-button{min-height:82px;border-radius:26px;display:grid;grid-template-columns:72px 1fr 40px;align-items:center;gap:14px;padding:12px 18px;text-decoration:none;font-weight:950;text-align:left;transition:transform .16s ease,filter .16s ease,box-shadow .16s ease;border:1px solid rgba(255,255,255,.18);box-shadow:0 18px 38px rgba(0,0,0,.28)}
-.hero-contact-icon{display:grid;place-items:center;width:54px;height:54px;font-size:32px;border-right:1px solid rgba(255,255,255,.25);padding-right:16px;justify-self:center}
-.hero-contact-copy{display:grid;gap:3px}
-.hero-contact-main{font-size:20px;line-height:1.04}.hero-contact-sub{font-size:12px;font-weight:850;opacity:.74;letter-spacing:.02em}
-.hero-contact-chevron{font-size:34px;font-weight:900;line-height:1;justify-self:end;opacity:.78}
-.hero-contact-button.whatsapp{color:#fff;background:linear-gradient(180deg,#21bb66,#149349);box-shadow:0 16px 36px rgba(31,168,85,.24)}
-.hero-contact-button.snapchat{color:#111;background:linear-gradient(180deg,#fffb32,#f2ed00);box-shadow:0 16px 36px rgba(255,252,0,.18)}
-.hero-contact-button.snapchat .hero-contact-main{font-size:21px}
-.hero-cta{width:100%;min-height:80px;margin-top:16px;border:1px solid rgba(255,255,255,.12);border-radius:26px;background:linear-gradient(180deg,#ff2034,#cb0013);color:#fff;font-weight:950;display:grid;grid-template-columns:72px 1fr 40px;align-items:center;gap:14px;padding:12px 18px;box-shadow:0 18px 40px rgba(237,28,43,.26);transition:transform .16s ease,box-shadow .16s ease,filter .16s ease;text-align:left}
-.hero-menu-icon{display:grid;place-items:center;width:54px;height:54px;font-size:30px;border-right:1px solid rgba(255,255,255,.26);padding-right:16px;justify-self:center}.hero-menu-copy{display:grid;gap:3px;text-align:left}.hero-menu-copy strong{font-size:21px;line-height:1.04}.hero-menu-copy small{font-size:12px;font-weight:850;opacity:.8;letter-spacing:.02em}.hero-menu-arrow{font-size:34px;font-weight:900;line-height:1;justify-self:end;opacity:.84}
+.hero{position:relative;isolation:isolate;min-height:100svh;display:grid;place-items:center;padding:28px 18px calc(30px + env(safe-area-inset-bottom));overflow:hidden;background:#050505}
+.hero::before{content:"";position:absolute;z-index:-2;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 22%,rgba(165,0,19,.22) 0,rgba(70,0,9,.12) 32%,transparent 58%),radial-gradient(ellipse at 15% 70%,rgba(124,0,14,.12),transparent 36%),linear-gradient(180deg,#090304 0%,#050505 54%,#020202 100%)}
+.hero::after{content:"";position:absolute;z-index:-1;left:50%;top:39%;width:min(74vw,470px);height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,rgba(237,28,43,.34),transparent);box-shadow:0 0 16px rgba(237,28,43,.12);pointer-events:none}
+.hero-focus{width:min(100%,520px);text-align:center}
+.hero-identity{display:grid;justify-items:center}
+.hero-logo{width:clamp(132px,39vw,184px);height:auto;overflow:visible;filter:drop-shadow(0 10px 20px rgba(0,0,0,.34))}
+.hero-logo-ring{fill:none;stroke:rgba(237,28,43,.78);stroke-width:2.1}
+.hero-logo-h{fill:#f5f5f5}
+.hero-logo-v{fill:var(--red)}
+.hero-brand{margin-top:8px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:clamp(36px,10.2vw,57px);font-weight:850;font-style:italic;line-height:.92;letter-spacing:-.045em;text-transform:uppercase;white-space:nowrap}
+.hero-brand span{color:#f4f4f4}.hero-brand strong{color:var(--red);font-weight:850}
+.hero-tagline{margin:22px 0 0;color:#f0f0f0;font-size:12px;font-weight:800;letter-spacing:.32em;text-transform:uppercase}
+.hero-rule{width:min(100%,430px);height:1px;margin:32px auto 22px;background:linear-gradient(90deg,transparent,rgba(237,28,43,.38),transparent)}
+.hero-connect-intro{display:grid;gap:7px;margin-bottom:16px}.hero-connect-intro strong{color:#fff;font-size:18px;font-weight:850;letter-spacing:.018em;text-transform:uppercase}.hero-connect-intro span{color:#a6a6a6;font-size:13px;font-weight:700;letter-spacing:.04em}
+.hero-contact-actions{display:grid;gap:14px}
+.hero-contact-button,.hero-cta{position:relative;width:100%;min-height:82px;border-radius:24px;display:grid;grid-template-columns:66px minmax(0,1fr) 28px;align-items:center;gap:12px;padding:10px 17px 10px 12px;text-decoration:none;text-align:left;overflow:hidden;border:1px solid rgba(255,255,255,.16);transition:transform .16s ease,filter .16s ease,box-shadow .16s ease}
+.hero-contact-button::before,.hero-cta::before{content:"";position:absolute;inset:0 0 auto;height:44%;background:linear-gradient(180deg,rgba(255,255,255,.11),transparent);pointer-events:none}
+.hero-contact-button.snapchat{color:#0f0f0f;background:linear-gradient(180deg,#fff71a 0%,#f7ef00 100%);box-shadow:0 12px 26px rgba(255,239,0,.10)}
+.hero-contact-button.whatsapp{color:#fff;background:linear-gradient(180deg,#20b96a 0%,#15974f 100%);box-shadow:0 12px 26px rgba(19,151,78,.12)}
+.hero-cta{margin-top:14px;color:#fff;background:linear-gradient(180deg,#f32639 0%,#d70b1c 100%);box-shadow:0 12px 26px rgba(220,11,29,.14)}
+.hero-action-icon{position:relative;z-index:1;width:48px;height:48px;display:grid;place-items:center;border-right:1px solid currentColor;opacity:.95;padding-right:12px}
+.hero-action-icon svg{width:31px;height:31px;display:block}
+.hero-action-copy,.hero-menu-copy{position:relative;z-index:1;display:grid;gap:4px;min-width:0}
+.hero-contact-main,.hero-menu-copy strong{font-size:20px;font-weight:850;line-height:1.03;letter-spacing:-.018em;white-space:nowrap}
+.hero-contact-sub,.hero-menu-copy small{font-size:12px;font-weight:700;line-height:1.1;opacity:.72;letter-spacing:.01em}
+.hero-chevron{position:relative;z-index:1;width:22px;height:22px;justify-self:end;opacity:.75}
 .hero-cta:active,.hero-contact-button:active,.category-button:active,.choice-button:active,.quick-add:active,.order-bar:active,.send-button:active{transform:scale(.985)}
 .shop{padding:32px 14px 150px;background:radial-gradient(circle at 100% 3%,rgba(237,28,43,.08),transparent 21%)}
 .shop-header{position:relative;isolation:isolate;margin:0 0 24px;padding:25px 18px 22px;text-align:center;border:1px solid rgba(255,255,255,.105);border-radius:24px;overflow:hidden;background:radial-gradient(circle at 50% 0,rgba(237,28,43,.18),transparent 48%),linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.012));box-shadow:inset 0 1px rgba(255,255,255,.045),0 18px 42px rgba(0,0,0,.3)}
@@ -84,6 +81,7 @@ button{cursor:pointer}
 @media(hover:hover){.hero-cta:hover{filter:brightness(1.06);box-shadow:0 20px 42px rgba(237,28,43,.3)}.hero-contact-button:hover{filter:brightness(1.06);transform:translateY(-1px)}.choice-button:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}}
 
 @media(max-width:430px){.hero{padding:26px 14px 22px}.hero-focus{width:min(100%,560px)}.hero-logo-wrap{padding:18px 22px 8px}.hero-logo-wrap::before{border-width:2px}.hero-brand{font-size:clamp(34px,10vw,58px)}.hero-connect-intro strong{font-size:18px}.hero-contact-button,.hero-cta{grid-template-columns:66px 1fr 32px;padding:12px 15px;border-radius:24px}.hero-contact-icon,.hero-menu-icon{width:48px;height:48px;font-size:28px;padding-right:13px}.hero-contact-main,.hero-menu-copy strong{font-size:18px}.hero-contact-sub,.hero-menu-copy small{font-size:11px}}
+@media(max-width:430px){.hero{padding-top:24px}.hero-logo{width:138px}.hero-brand{font-size:clamp(34px,10vw,45px)}.hero-tagline{margin-top:18px}.hero-rule{margin:28px auto 20px}.hero-contact-button,.hero-cta{min-height:78px;border-radius:23px}.hero-contact-main,.hero-menu-copy strong{font-size:19px}}
 @media(max-width:430px){.product-options.two-column{gap:6px}.product-options.two-column .choice-button{padding:10px 9px}.product-options.two-column .choice-button span{font-size:12.5px}.product-options.two-column .choice-button strong{font-size:11px}}
 @media(max-width:350px){.product-options.two-column{grid-template-columns:1fr}.category-title{font-size:17px}.hero-contact-button,.hero-cta{grid-template-columns:62px 1fr 28px;padding:11px 14px;border-radius:22px}.hero-contact-icon,.hero-menu-icon{width:46px;height:46px;font-size:26px;padding-right:12px}.hero-contact-main,.hero-menu-copy strong{font-size:18px}.hero-contact-button.snapchat .hero-contact-main{font-size:19px}.hero-brand{font-size:32px}.hero-tagline{letter-spacing:.24em;font-size:12px}}
 @media(max-width:390px){.category-title{font-size:18px}.product-button{grid-template-columns:48px 1fr auto auto}.product-image,.product-image img{max-width:48px;max-height:48px}.order-bar-action{font-size:13px;padding:11px}}
