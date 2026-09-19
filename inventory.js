@@ -85,7 +85,7 @@ window.HV_INVENTORY = {
   disposable: {
     title: "Disposable Vapes",
     items: [
-      { name: "Lost Mary BM6000", price: "£10", meta: "12 flavours available", popular: true, flavours: ["Blueberry Cherry Cranberry", "Banana Ice", "Triple Mango", "Summer Grape", "Blueberry Sour Raspberry", "Strawberry Raspberry Cherry Ice", "Latte", "Maimi Mint", "Blackcurrant Lemonade", "Lemon Lime", "Fruit Medley", "Blackberry Ice"] },
+      { name: "Lost Mary BM6000", price: "£10", meta: "11 flavours available", popular: true, flavours: ["Banana Ice", "Triple Mango", "Summer Grape", "Blueberry Sour Raspberry", "Strawberry Raspberry Cherry Ice", "Latte", "Maimi Mint", "Blackcurrant Lemonade", "Lemon Lime", "Fruit Medley", "Blackberry Ice"] },
       { name: "Hayati Dual Flavour 25000", price: "£15", meta: "3 flavour combinations", flavours: ["Strawberry Cranberry Cherry / Cherry Ice", "Peach Mango / Cherry Ice", "Blueberry Raspberry / Blueberry Raspberry Cherry"] },
       { name: "Enjoy Ultra 9000", price: "£10", meta: "2 flavours available", flavours: ["Berry Apple Peach", "Apple Watermelon Strawberry"] },
       { name: "Pixl 8000", price: "£10", meta: "2 flavours available", flavours: ["Sour Pineapple Mango", "Strawberry Burst"] },
@@ -104,7 +104,7 @@ window.HV_INVENTORY = {
   salts: {
     title: "Nic Salts",
     items: [
-      { name: "Elux Legend Nic Salts", price: "£2.50", meta: "20mg • 26 flavours available", popular: true, flavours: ["Mr Blue", "Blueberry Cranberry Cherry", "Blue Razz Gummy", "Blackberry Ice", "Banana Ice", "Fizzy Cherry", "Blueberry Sour Raspberry", "Strawberry Ice", "Watermelon Ice", "Cherry Ice", "Blue Razz Cherry", "Cherry Sour Raspberry", "Grape", "Lemon Lime", "Strawberry Raspberry Cherry", "Cherry Lime", "Pineapple Ice", "Lemonade", "Triple Mango", "Oasis", "Black Cherry", "Triple Melon", "Strawberry Ice Cream", "Gummy Bear", "Juicy Peach", "Double Apple"] }
+      { name: "Elux Legend Nic Salts", price: "£2.50", meta: "20mg • 25 flavours available", popular: true, flavours: ["Blueberry Cranberry Cherry", "Blue Razz Gummy", "Blackberry Ice", "Banana Ice", "Fizzy Cherry", "Blueberry Sour Raspberry", "Strawberry Ice", "Watermelon Ice", "Cherry Ice", "Blue Razz Cherry", "Cherry Sour Raspberry", "Grape", "Lemon Lime", "Strawberry Raspberry Cherry", "Cherry Lime", "Pineapple Ice", "Lemonade", "Triple Mango", "Oasis", "Black Cherry", "Triple Melon", "Strawberry Ice Cream", "Gummy Bear", "Juicy Peach", "Double Apple"] }
     ]
   },
 
