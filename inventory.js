@@ -87,7 +87,7 @@ window.HV_INVENTORY = {
     items: [
       { name: "Lost Mary BM6000", price: "£10", meta: "11 flavours available", popular: true, flavours: ["Banana Ice", "Summer Grape", "Latte", "Miami Mint", "Blackcurrant Lemonade", "Lemon Lime", "Fruit Medley", "Blackberry Ice", "Blueberry Sour Raspberry", "Blueberry Cherry Cranberry", "Blue Razz Lemonade"] },
       { name: "Hayati Dual Flavour 25000", price: "£15", meta: "4 flavour combinations", flavours: ["Strawberry Cranberry Cherry / Cherry Ice", "Peach Mango / Cherry Ice", "Blueberry Raspberry / Blueberry Raspberry Cherry", "Blueberry Cotton Candy / Raspberry Cotton Candy"] },
-      { name: "Enjoy Ultra 9000", price: "£10", meta: "2 flavours available", flavours: ["Berry Apple Peach", "Apple Watermelon Strawberry"] },
+      { name: "Enjoy Ultra 9000", price: "£10", meta: "1 flavour available", flavours: ["Berry Apple Peach"] },
       { name: "Pixl 8000", price: "£10", meta: "1 flavour available", flavours: ["Strawberry Burst"] },
       { name: "Hayati Pro Max 6000", price: "£10", meta: "4 flavours available", flavours: ["Blue Fusion", "Mango Peach Pineapple", "Cherry Sour Raspberry", "Ice Pop"] },
       { name: "Elux Legend 3500", price: "£5", meta: "3 flavours available", flavours: ["Cherry Sours", "Pineapple Ice", "Watermelon Cherry Raspberry Ice"] }
@@ -104,7 +104,7 @@ window.HV_INVENTORY = {
   salts: {
     title: "Nic Salts",
     items: [
-      { name: "Elux Legend Nic Salts", price: "£2.50", meta: "20mg • 25 flavours available", popular: true, flavours: ["Blueberry Cranberry Cherry", "Blue Razz Gummy", "Blackberry Ice", "Banana Ice", "Fizzy Cherry", "Blueberry Sour Raspberry", "Strawberry Ice", "Watermelon Ice", "Cherry Ice", "Blue Razz Cherry", "Cherry Sour Raspberry", "Grape", "Lemon Lime", "Strawberry Raspberry Cherry", "Cherry Lime", "Pineapple Ice", "Triple Mango", "Oasis", "Black Cherry", "Triple Melon", "Strawberry Ice Cream", "Gummy Bear", "Juicy Peach", "Double Apple", "Mr Blue"] }
+      { name: "Elux Legend Nic Salts", price: "£2.50", meta: "20mg • 24 flavours available", popular: true, flavours: ["Blueberry Cranberry Cherry", "Blue Razz Gummy", "Blackberry Ice", "Banana Ice", "Fizzy Cherry", "Blueberry Sour Raspberry", "Strawberry Ice", "Watermelon Ice", "Cherry Ice", "Blue Razz Cherry", "Cherry Sour Raspberry", "Lemon Lime", "Strawberry Raspberry Cherry", "Cherry Lime", "Pineapple Ice", "Triple Mango", "Oasis", "Black Cherry", "Triple Melon", "Strawberry Ice Cream", "Gummy Bear", "Juicy Peach", "Double Apple", "Mr Blue"] }
     ]
   },
 
