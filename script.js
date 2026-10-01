@@ -138,6 +138,7 @@ function productImageFor(name) {
   if (key.includes("hayati pro")) return "hayati6000.png.png";
   if (key.includes("elux legend 3500")) return "elux3500.png.png";
   if (key.includes("enjoy ultra")) return "enjoyultra.png.png";
+  if (key.includes("ske crystal")) return "ske600.png";
   if (key.includes("pixl")) return "pixl8000.png.png";
   if (key.includes("xros pro") || key.includes("xros 2.0 kit")) return "podkit.png.png";
   if (key.includes("nic salts")) return "eluxnicsalt.png.png";
