@@ -50,14 +50,14 @@ window.HV_INVENTORY = {
         prompts: ["Device 1", "Device 2"]
       },
       {
-        name: "Elux 3500 Deal",
-        components: ["3 × Elux Legend 3500"],
-        price: "£10",
-        meta: "3.5K disposable bundle",
+        name: "SKE Crystal Deal",
+        components: ["4 × SKE Crystal 600"],
+        price: "£15",
+        meta: "SKE 600 disposable bundle",
         saving: "Save £5",
         confirm: "Flavours confirmed in message",
-        visuals: [{ label: "Elux 3500", qty: "×3" }],
-        prompts: ["Flavour 1", "Flavour 2", "Flavour 3"]
+        visuals: [{ label: "SKE Crystal 600", qty: "×4" }],
+        prompts: ["SKE 1", "SKE 2", "SKE 3", "SKE 4"]
       },
       {
         name: "Lost Mary Deal",
