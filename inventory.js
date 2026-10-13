@@ -85,7 +85,7 @@ window.HV_INVENTORY = {
   disposable: {
     title: "Disposable Vapes",
     items: [
-      { name: "Lost Mary BM6000", price: "£10", meta: "13 flavours available", popular: true, flavours: ["Latte", "Blackberry Ice", "Blueberry Sour Raspberry", "Blueberry Cherry Cranberry", "Strawberry Raspberry Cherry Ice", "Strawberry Watermelon", "Fizzy Cherry", "Strawberry Ice", "Summer Grape", "Lemon Lime", "Banana Volcano", "Mr Blue", "Cherry Cola"] },
+      { name: "Lost Mary BM6000", price: "£10", meta: "12 flavours available", popular: true, flavours: ["Latte", "Blackberry Ice", "Blueberry Sour Raspberry", "Blueberry Cherry Cranberry", "Strawberry Watermelon", "Fizzy Cherry", "Strawberry Ice", "Summer Grape", "Lemon Lime", "Banana Volcano", "Mr Blue", "Cherry Cola"] },
       { name: "Hayati Dual Flavour 25000", price: "£15", meta: "2 flavour combinations", flavours: ["Strawberry Cranberry Cherry / Cherry Ice", "Watermelon Bubblegum / Strawberry Bubblegum"] },
       { name: "Hayati Pro Max 6000", price: "£10", meta: "4 flavours available", flavours: ["Blue Fusion", "Cherry Sour Raspberry", "Ice Pop", "White Peach Raspberry"] },
       { name: "SKE Crystal 600", price: "£5", meta: "5 flavours available", flavours: ["Lemon Lime", "Cherry Ice", "Mr Blue", "Blueberry Sour Raspberry", "Pineapple Peach Mango"] },
