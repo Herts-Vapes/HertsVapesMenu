@@ -86,25 +86,25 @@ window.HV_INVENTORY = {
     title: "Disposable Vapes",
     items: [
       { name: "Lost Mary BM6000", price: "£10", meta: "12 flavours available", popular: true, flavours: ["Latte", "Blackberry Ice", "Blueberry Sour Raspberry", "Blueberry Cherry Cranberry", "Strawberry Watermelon", "Fizzy Cherry", "Strawberry Ice", "Summer Grape", "Lemon Lime", "Banana Volcano", "Mr Blue", "Cherry Cola"] },
-      { name: "Hayati Dual Flavour 25000", price: "£15", meta: "2 flavour combinations", flavours: ["Strawberry Cranberry Cherry / Cherry Ice", "Watermelon Bubblegum / Strawberry Bubblegum"] },
-      { name: "Hayati Pro Max 6000", price: "£10", meta: "4 flavours available", flavours: ["Blue Fusion", "Cherry Sour Raspberry", "Ice Pop", "White Peach Raspberry"] },
+      { name: "Hayati Dual Flavour 25000", price: "£15", meta: "6 flavour combinations", flavours: ["Strawberry Cranberry Cherry / Cherry Ice", "Watermelon Bubblegum / Strawberry Bubblegum", "Kiwi Banana / Strawberry Banana", "Strawberry Guava / Dragon Berries", "Blue Razz Pineapple / Strawberry Ice", "Cherry Ice / Peach Mango"] },
+      { name: "Hayati Pro Max 6000", price: "£10", meta: "3 flavours available", flavours: ["Blue Fusion", "Cherry Sour Raspberry", "Ice Pop"] },
       { name: "SKE Crystal 600", price: "£5", meta: "5 flavours available", flavours: ["Lemon Lime", "Cherry Ice", "Mr Blue", "Blueberry Sour Raspberry", "Pineapple Peach Mango"] },
-      { name: "Enjoy Ultra 9000", price: "£10", meta: "1 flavour available", flavours: ["Berry Apple Peach"] },
-      { name: "Elux Legend 3500", price: "£5", meta: "1 flavour available", flavours: ["Pineapple Ice"] }
+      { name: "Enjoy Ultra 9000", price: "£10", meta: "1 flavour available", flavours: ["Berry Apple Peach"] }
     ]
   },
 
   podkits: {
     title: "Pod Kits",
     items: [
-      { name: "Vaporesso XROS 2.0 Kit", price: "£25", meta: "Body kit • comes with 2 pods", details: ["Glittering Gold", "Glittering Black", "Glittering Silver"] }
+      { name: "Vaporesso XROS Pro 2.0 Kit", price: "£25", meta: "Includes 2 pods", details: ["Glittering Gold", "Glittering Black"] },
+      { name: "Vaporesso XROS 6 Kit", price: "£30", meta: "New • Includes 2 pods", details: ["Abyssal Blue", "Cosmic Black", "Pearl White"] }
     ]
   },
 
   salts: {
     title: "Nic Salts",
     items: [
-      { name: "Elux Legend Nic Salts", price: "£2.50", meta: "20mg • 23 flavours available", popular: true, flavours: ["Blueberry Cranberry Cherry", "Blue Razz Gummy", "Blackberry Ice", "Banana Ice", "Fizzy Cherry", "Blueberry Sour Raspberry", "Strawberry Ice", "Watermelon Ice", "Cherry Ice", "Blue Razz Cherry", "Cherry Sour Raspberry", "Lemon Lime", "Strawberry Raspberry Cherry", "Cherry Lime", "Pineapple Ice", "Triple Mango", "Oasis", "Black Cherry", "Triple Melon", "Strawberry Ice Cream", "Gummy Bear", "Double Apple", "Mr Blue" ] }
+      { name: "Elux Legend Nic Salts", price: "£2.50", meta: "20mg • 26 flavours available", popular: true, flavours: ["Blueberry Cranberry Cherry", "Blue Razz Gummy", "Blackberry Ice", "Banana Ice", "Fizzy Cherry", "Blueberry Sour Raspberry", "Strawberry Ice", "Watermelon Ice", "Cherry Ice", "Blue Razz Cherry", "Cherry Sour Raspberry", "Lemon Lime", "Strawberry Raspberry Cherry", "Cherry Lime", "Pineapple Ice", "Triple Mango", "Oasis", "Black Cherry", "Triple Melon", "Strawberry Ice Cream", "Gummy Bear", "Double Apple", "Mr Blue", "Grape", "Juicy Peach", "Fresh Mint" ] }
     ]
   },
 

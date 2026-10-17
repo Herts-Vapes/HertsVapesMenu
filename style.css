@@ -88,3 +88,6 @@ button{cursor:pointer}
 @media(max-width:350px){.product-options.two-column{grid-template-columns:1fr}.category-title{font-size:17px}.hero-contact-button,.hero-cta{grid-template-columns:62px 1fr 28px;padding:11px 14px;border-radius:22px}.hero-contact-icon,.hero-menu-icon{width:46px;height:46px;font-size:26px;padding-right:12px}.hero-contact-main,.hero-menu-copy strong{font-size:18px}.hero-contact-button.snapchat .hero-contact-main{font-size:19px}.hero-logo-image{width:min(95%,310px)}}
 @media(max-width:390px){.category-title{font-size:18px}.product-button{grid-template-columns:48px 1fr auto auto}.product-image,.product-image img{max-width:48px;max-height:48px}.order-bar-action{font-size:13px;padding:11px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* Product rows without a supplied image use the full available width. */
+.product-button.no-image{grid-template-columns:minmax(0,1fr) auto auto}

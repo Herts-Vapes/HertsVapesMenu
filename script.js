@@ -172,7 +172,7 @@ function renderProduct(product) {
   const meta = productMeta(product);
   return `
     <article class="product-card ${needsChoice ? "has-options" : ""}">
-      <button class="product-button" type="button" ${needsChoice ? "" : "disabled"} aria-expanded="false">
+      <button class="product-button ${image ? "" : "no-image"}" type="button" ${needsChoice ? "" : "disabled"} aria-expanded="false">
         ${image ? `<span class="product-image"><img src="${image}" alt="" loading="lazy"></span>` : ""}
         <span class="product-copy">
           ${product.popular ? `<span class="product-badge">Most Popular</span>` : ""}
