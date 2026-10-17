@@ -89,7 +89,7 @@ window.HV_INVENTORY = {
       { name: "Hayati Dual Flavour 25000", price: "£15", meta: "6 flavour combinations", flavours: ["Strawberry Cranberry Cherry / Cherry Ice", "Watermelon Bubblegum / Strawberry Bubblegum", "Kiwi Banana / Strawberry Banana", "Strawberry Guava / Dragon Berries", "Blue Razz Pineapple / Strawberry Ice", "Cherry Ice / Peach Mango"] },
       { name: "Hayati Pro Max 6000", price: "£10", meta: "3 flavours available", flavours: ["Blue Fusion", "Cherry Sour Raspberry", "Ice Pop"] },
       { name: "SKE Crystal 600", price: "£5", meta: "5 flavours available", flavours: ["Lemon Lime", "Cherry Ice", "Mr Blue", "Blueberry Sour Raspberry", "Pineapple Peach Mango"] },
-      { name: "Enjoy Ultra 9000", price: "£10", meta: "1 flavour available", flavours: ["Berry Apple Peach"] }
+      { name: "Enjoy Ultra 9000", price: "£10", meta: "1 flavour available", flavours: ["Berry Apple Peach"] },
     ]
   },
 
@@ -97,14 +97,14 @@ window.HV_INVENTORY = {
     title: "Pod Kits",
     items: [
       { name: "Vaporesso XROS Pro 2.0 Kit", price: "£25", meta: "Includes 2 pods", details: ["Glittering Gold", "Glittering Black"] },
-      { name: "Vaporesso XROS 6 Kit", price: "£30", meta: "New • Includes 2 pods", details: ["Abyssal Blue", "Cosmic Black", "Pearl White"] }
+      { name: "Vaporesso XROS Pro 6.0 Kit", price: "£30", meta: "New • Includes 2 pods", details: ["Abyssal Blue", "Cosmic Black", "Pearl White"] }
     ]
   },
 
   salts: {
     title: "Nic Salts",
     items: [
-      { name: "Elux Legend Nic Salts", price: "£2.50", meta: "20mg • 26 flavours available", popular: true, flavours: ["Blueberry Cranberry Cherry", "Blue Razz Gummy", "Blackberry Ice", "Banana Ice", "Fizzy Cherry", "Blueberry Sour Raspberry", "Strawberry Ice", "Watermelon Ice", "Cherry Ice", "Blue Razz Cherry", "Cherry Sour Raspberry", "Lemon Lime", "Strawberry Raspberry Cherry", "Cherry Lime", "Pineapple Ice", "Triple Mango", "Oasis", "Black Cherry", "Triple Melon", "Strawberry Ice Cream", "Gummy Bear", "Double Apple", "Mr Blue", "Grape", "Juicy Peach", "Fresh Mint" ] }
+      { name: "Elux Legend Nic Salts", price: "£2.50", meta: "20mg • 26 flavours available", popular: true, flavours: ["Blueberry Cranberry Cherry", "Blue Razz Gummy", "Blackberry Ice", "Banana Ice", "Fizzy Cherry", "Blueberry Sour Raspberry", "Strawberry Ice", "Watermelon Ice", "Cherry Ice", "Blue Razz Cherry", "Cherry Sour Raspberry", "Lemon Lime", "Strawberry Raspberry Cherry", "Cherry Lime", "Pineapple Ice", "Triple Mango", "Oasis", "Black Cherry", "Triple Melon", "Strawberry Ice Cream", "Gummy Bear", "Double Apple", "Mr Blue", "Grape", "Juicy Peach", "Fresh Mint"] }
     ]
   },
 

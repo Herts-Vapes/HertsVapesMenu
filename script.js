@@ -140,7 +140,8 @@ function productImageFor(name) {
   if (key.includes("enjoy ultra")) return "enjoyultra.png.png";
   if (key.includes("ske crystal")) return "ske600.png";
   if (key.includes("pixl")) return "pixl8000.png.png";
-  if (key.includes("xros pro") || key.includes("xros 2.0 kit")) return "podkit.png.png";
+  if (key.includes("xros pro 6") || key.includes("xros 6")) return "xrospro6.png";
+  if (key.includes("xros pro 2") || key.includes("xros 2.0 kit")) return "podkit.png.png";
   if (key.includes("nic salts")) return "eluxnicsalt.png.png";
   if (key.includes("corex") || key.includes("xros pods")) return "vaporessopod.png.png";
   if (key.includes("pablo")) return "pablopouch.png.png";
@@ -169,10 +170,12 @@ function renderProduct(product) {
   const choices = product.flavours || product.details || [];
   const image = productImageFor(product.name);
   const needsChoice = choices.length > 0;
+  const hasPricing = Array.isArray(product.pricing) && product.pricing.length > 0;
   const meta = productMeta(product);
+  const optionHint = needsChoice ? "Tap to choose" : hasPricing ? "Tap an option below" : "";
   return `
-    <article class="product-card ${needsChoice ? "has-options" : ""}">
-      <button class="product-button ${image ? "" : "no-image"}" type="button" ${needsChoice ? "" : "disabled"} aria-expanded="false">
+    <article class="product-card ${needsChoice ? "has-options" : ""} ${hasPricing ? "has-pricing" : ""}">
+      <button class="product-button" type="button" ${needsChoice ? "" : "disabled"} aria-expanded="false">
         ${image ? `<span class="product-image"><img src="${image}" alt="" loading="lazy"></span>` : ""}
         <span class="product-copy">
           ${product.popular ? `<span class="product-badge">Most Popular</span>` : ""}
@@ -180,6 +183,7 @@ function renderProduct(product) {
           <small>${escapeHtml(meta)}</small>
         </span>
         ${product.price ? `<span class="product-price">${escapeHtml(product.price)}</span>` : ""}
+        ${optionHint ? `<span class="product-select-hint">${escapeHtml(optionHint)}</span>` : ""}
         ${needsChoice ? `<span class="product-arrow" aria-hidden="true">⌄</span>` : ""}
       </button>
       ${product.pricing ? renderPricing(product) : ""}
