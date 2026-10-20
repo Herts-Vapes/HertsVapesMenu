@@ -30,14 +30,14 @@ window.HV_INVENTORY = {
         prompts: ["Kit colour", "Nic Salt 1", "Nic Salt 2", "Nic Salt 3", "Nic Salt 4"]
       },
       {
-        name: "Pods & Salts Bundle",
-        components: ["2 × Vaporesso XROS Pods", "6 × Nic Salts"],
-        price: "£20",
-        meta: "Pods and liquids bundle",
-        saving: "Save £5",
+        name: "15 Nic Salts Deal",
+        components: ["15 × Elux Legend Nic Salts"],
+        price: "£30",
+        meta: "Nic salts bundle",
+        saving: "Save £7.50",
         confirm: "Flavours confirmed in message",
-        visuals: [{ label: "XROS Pods", qty: "×2" }, { label: "Nic Salts", qty: "×6" }],
-        prompts: ["Nic Salt 1", "Nic Salt 2", "Nic Salt 3", "Nic Salt 4", "Nic Salt 5", "Nic Salt 6"]
+        visuals: [{ label: "Elux Legend Nic Salts", qty: "×15" }],
+        prompts: Array.from({ length: 15 }, (_, i) => `Nic Salt ${i + 1}`)
       },
       {
         name: "Hayati 25K Deal",
@@ -50,16 +50,6 @@ window.HV_INVENTORY = {
         prompts: ["Device 1", "Device 2"]
       },
       {
-        name: "SKE Crystal Deal",
-        components: ["4 × SKE Crystal 600"],
-        price: "£15",
-        meta: "SKE 600 disposable bundle",
-        saving: "Save £5",
-        confirm: "Flavours confirmed in message",
-        visuals: [{ label: "SKE Crystal 600", qty: "×4" }],
-        prompts: ["SKE 1", "SKE 2", "SKE 3", "SKE 4"]
-      },
-      {
         name: "Lost Mary Deal",
         components: ["3 × Lost Mary BM6000"],
         price: "£25",
@@ -70,14 +60,24 @@ window.HV_INVENTORY = {
         prompts: ["Lost Mary 1", "Lost Mary 2", "Lost Mary 3"]
       },
       {
-        name: "15 Nic Salts Deal",
-        components: ["15 × Elux Legend Nic Salts"],
-        price: "£30",
-        meta: "Nic salts bundle",
-        saving: "Save £7.50",
+        name: "Pods & Salts Bundle",
+        components: ["2 × Vaporesso XROS Pods", "6 × Nic Salts"],
+        price: "£20",
+        meta: "Pods and liquids bundle",
+        saving: "Save £5",
         confirm: "Flavours confirmed in message",
-        visuals: [{ label: "Elux Legend Nic Salts", qty: "×15" }],
-        prompts: Array.from({ length: 15 }, (_, i) => `Nic Salt ${i + 1}`)
+        visuals: [{ label: "XROS Pods", qty: "×2" }, { label: "Nic Salts", qty: "×6" }],
+        prompts: ["Nic Salt 1", "Nic Salt 2", "Nic Salt 3", "Nic Salt 4", "Nic Salt 5", "Nic Salt 6"]
+      },
+      {
+        name: "SKE Crystal Deal",
+        components: ["4 × SKE Crystal 600"],
+        price: "£15",
+        meta: "SKE 600 disposable bundle",
+        saving: "Save £5",
+        confirm: "Flavours confirmed in message",
+        visuals: [{ label: "SKE Crystal 600", qty: "×4" }],
+        prompts: ["SKE 1", "SKE 2", "SKE 3", "SKE 4"]
       }
     ]
   },
