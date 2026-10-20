@@ -70,14 +70,14 @@ window.HV_INVENTORY = {
         prompts: ["Lost Mary 1", "Lost Mary 2", "Lost Mary 3"]
       },
       {
-        name: "Enjoy Ultra Deal",
-        components: ["2 × Enjoy Ultra 9000"],
-        price: "£15",
-        meta: "Clearance bundle",
-        saving: "Save £5",
+        name: "15 Nic Salts Deal",
+        components: ["15 × Elux Legend Nic Salts"],
+        price: "£30",
+        meta: "Nic salts bundle",
+        saving: "Save £7.50",
         confirm: "Flavours confirmed in message",
-        visuals: [{ label: "Enjoy Ultra 9000", qty: "×2" }],
-        prompts: ["Enjoy Ultra 1", "Enjoy Ultra 2"]
+        visuals: [{ label: "Elux Legend Nic Salts", qty: "×15" }],
+        prompts: Array.from({ length: 15 }, (_, i) => `Nic Salt ${i + 1}`)
       }
     ]
   },
