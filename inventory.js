@@ -7,13 +7,13 @@ window.HV_INVENTORY = {
       {
         name: "Complete XROS Bundle",
         bestValue: true,
-        components: ["1 × Vaporesso XROS 2.0 Kit", "4 × Vaporesso XROS Pods", "4 × Nic Salts"],
+        components: ["1 × Vaporesso XROS Pro 6.0 Kit", "4 × Vaporesso XROS Pods", "4 × Nic Salts"],
         price: "£40",
         meta: "Complete XROS bundle",
         saving: "Save £10",
         confirm: "Flavours confirmed in message",
         visuals: [
-          { label: "Vaporesso XROS 2.0 Kit" },
+          { label: "Vaporesso XROS Pro 6.0 Kit" },
           { label: "Vaporesso XROS Pods", qty: "×4" },
           { label: "Nic Salts", qty: "×4" }
         ],
@@ -21,12 +21,12 @@ window.HV_INVENTORY = {
       },
       {
         name: "XROS & Salts Bundle",
-        components: ["1 × Vaporesso XROS 2.0 Kit", "4 × Nic Salts"],
+        components: ["1 × Vaporesso XROS Pro 6.0 Kit", "4 × Nic Salts"],
         price: "£30",
         meta: "Kit bundle",
         saving: "Save £5",
         confirm: "Flavours confirmed in message",
-        visuals: [{ label: "Vaporesso XROS 2.0 Kit" }, { label: "Nic Salts", qty: "×4" }],
+        visuals: [{ label: "Vaporesso XROS Pro 6.0 Kit" }, { label: "Nic Salts", qty: "×4" }],
         prompts: ["Kit colour", "Nic Salt 1", "Nic Salt 2", "Nic Salt 3", "Nic Salt 4"]
       },
       {
@@ -96,8 +96,7 @@ window.HV_INVENTORY = {
   podkits: {
     title: "Pod Kits",
     items: [
-      { name: "Vaporesso XROS Pro 2.0 Kit", price: "£25", meta: "Includes 2 pods", details: ["Glittering Black"] },
-      { name: "Vaporesso XROS Pro 6.0 Kit", price: "£30", meta: "New • Includes 2 pods", details: ["Abyssal Blue", "Cosmic Black", "Pearl White"] }
+      { name: "Vaporesso XROS Pro 6.0 Kit", price: "£25", meta: "New • Includes 2 pods", details: ["Abyssal Blue", "Cosmic Black", "Pearl White"] }
     ]
   },
 
