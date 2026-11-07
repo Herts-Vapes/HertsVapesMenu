@@ -87,7 +87,7 @@ window.HV_INVENTORY = {
     items: [
       { name: "Lost Mary BM6000", price: "£10", meta: "12 flavours available", popular: true, flavours: ["Latte", "Mr Blue", "Strawberry Sour Raspberry", "Tropical Punch", "Hubba Bubba", "Juicy Peach", "Miami Mint", "Cherryade", "Cherry Ice", "Blue Sour Raspberry", "Banana Ice", "Blue Razz Lemonade"] },
       { name: "Hayati Dual Flavour 25000", price: "£15", meta: "5 flavour combinations", flavours: ["Strawberry Cranberry Cherry / Cherry Ice", "Watermelon Bubblegum / Strawberry Bubblegum", "Kiwi Banana / Strawberry Banana", "Strawberry Guava / Dragon Berries", "Blue Razz Pineapple / Strawberry Ice"] },
-      { name: "Hayati Pro Max 6000", price: "£10", meta: "4 flavours available", flavours: ["Ice Pop", "Strawberry Cherry Cranberry", "Peach Aura", "Blue Sour Raspberry"] },
+      { name: "Hayati Pro Max 6000", price: "£10", meta: "3 flavours available", flavours: ["Strawberry Cherry Cranberry", "Peach Aura", "Blue Sour Raspberry"] },
       { name: "SKE Crystal 600", price: "£5", meta: "5 flavours available", flavours: ["Lemon Lime", "Cherry Ice", "Mr Blue", "Blueberry Sour Raspberry", "Pineapple Peach Mango"] },
     ]
   },
