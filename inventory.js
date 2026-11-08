@@ -102,7 +102,7 @@ window.HV_INVENTORY = {
   salts: {
     title: "Nic Salts",
     items: [
-      { name: "Elux Legend Nic Salts", price: "£2.50", meta: "20mg • 23 flavours available", popular: true, flavours: ["Blueberry Cranberry Cherry", "Banana Ice", "Fizzy Cherry", "Blueberry Sour Raspberry", "Strawberry Ice", "Watermelon Ice", "Cherry Ice", "Blue Razz Cherry", "Cherry Sour Raspberry", "Lemon Lime", "Strawberry Raspberry Cherry", "Pineapple Ice", "Triple Mango", "Oasis", "Black Cherry", "Triple Melon", "Strawberry Ice Cream", "Gummy Bear", "Double Apple", "Mr Blue", "Grape", "Juicy Peach", "Fresh Mint"] }
+      { name: "Elux Legend Nic Salts", price: "£2.50", meta: "20mg • 19 flavours available", popular: true, flavours: ["Blueberry Cranberry Cherry", "Banana Ice", "Fizzy Cherry", "Strawberry Ice", "Watermelon Ice", "Cherry Ice", "Cherry Sour Raspberry", "Lemon Lime", "Strawberry Raspberry Cherry", "Pineapple Ice", "Triple Mango", "Triple Melon", "Strawberry Ice Cream", "Gummy Bear", "Double Apple", "Mr Blue", "Grape", "Juicy Peach", "Fresh Mint"] }
     ]
   },
 
