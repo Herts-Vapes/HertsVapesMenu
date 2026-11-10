@@ -85,7 +85,7 @@ window.HV_INVENTORY = {
   disposable: {
     title: "Disposable Vapes",
     items: [
-      { name: "Lost Mary BM6000", price: "£10", meta: "11 flavours available", popular: true, flavours: ["Latte", "Strawberry Sour Raspberry", "Tropical Punch", "Hubba Bubba", "Juicy Peach", "Miami Mint", "Cherryade", "Cherry Ice", "Blue Sour Raspberry", "Banana Ice", "Blue Razz Lemonade"] },
+      { name: "Lost Mary BM6000", price: "£10", meta: "15 flavours available", popular: true, flavours: ["Latte", "Strawberry Sour Raspberry", "Tropical Punch", "Hubba Bubba", "Juicy Peach", "Miami Mint", "Cherryade", "Cherry Ice", "Banana Ice", "Blue Razz Lemonade", "Strawberry Raspberry Cherry Ice", "Triple Mango", "Double Apple", "Cherry Cola", "Banana Volcano"] },
       { name: "Hayati Dual Flavour 25000", price: "£15", meta: "4 flavour combinations", flavours: ["Strawberry Cranberry Cherry / Cherry Ice", "Watermelon Bubblegum / Strawberry Bubblegum", "Kiwi Banana / Strawberry Banana", "Strawberry Guava / Dragon Berries"] },
       { name: "Hayati Pro Max 6000", price: "£10", meta: "3 flavours available", flavours: ["Strawberry Cherry Cranberry", "Peach Aura", "Blue Sour Raspberry"] },
       { name: "SKE Crystal 600", price: "£5", meta: "5 flavours available", flavours: ["Lemon Lime", "Cherry Ice", "Mr Blue", "Blueberry Sour Raspberry", "Pineapple Peach Mango"] },
@@ -95,14 +95,14 @@ window.HV_INVENTORY = {
   podkits: {
     title: "Pod Kits",
     items: [
-      { name: "Vaporesso XROS Pro 6.0 Kit", price: "£25", meta: "New • Includes 2 pods", details: ["Cosmic Black"] }
+      { name: "Vaporesso XROS Pro 6.0 Kit", price: "£25", meta: "New • Includes 2 pods", details: ["Cosmic Black", "Scorching Cloud", "Abyssal Blue"] }
     ]
   },
 
   salts: {
     title: "Nic Salts",
     items: [
-      { name: "Elux Legend Nic Salts", price: "£2.50", meta: "20mg • 18 flavours available", popular: true, flavours: ["Blueberry Cranberry Cherry", "Banana Ice", "Fizzy Cherry", "Strawberry Ice", "Watermelon Ice", "Cherry Ice", "Lemon Lime", "Strawberry Raspberry Cherry", "Pineapple Ice", "Triple Mango", "Triple Melon", "Strawberry Ice Cream", "Gummy Bear", "Double Apple", "Mr Blue", "Grape", "Juicy Peach", "Fresh Mint"] }
+      { name: "Elux Legend Nic Salts", price: "£2.50", meta: "20mg • 25 flavours available", popular: true, flavours: ["Blueberry Cranberry Cherry", "Banana Ice", "Fizzy Cherry", "Strawberry Ice", "Watermelon Ice", "Cherry Ice", "Lemon Lime", "Strawberry Raspberry Cherry", "Pineapple Ice", "Triple Mango", "Triple Melon", "Strawberry Ice Cream", "Gummy Bear", "Double Apple", "Mr Blue", "Grape", "Juicy Peach", "Fresh Mint", "Cherry Sour Raspberry", "Blueberry Sour Raspberry", "Blackberry Ice", "Oasis", "Blue Razz Gummy", "Blue Razz Cherry", "Black Cherry"] }
     ]
   },
 
@@ -117,7 +117,9 @@ window.HV_INVENTORY = {
     title: "Nicotine Pouches",
     items: [
       { name: "Pablo Dark Cherry Gold Edition", meta: "17mg", pricing: [{ label: "1 Box", price: "£5" }, { label: "Pack of 4", price: "£15" }], saving: "Save £5" },
-      { name: "Pablo Frosted Mint", meta: "50mg", pricing: [{ label: "1 Box", price: "£5" }, { label: "Pack of 4", price: "£15" }], saving: "Save £5" }
+      { name: "Pablo Frosted Mint", meta: "50mg", pricing: [{ label: "1 Box", price: "£5" }, { label: "Pack of 4", price: "£15" }], saving: "Save £5" },
+      { name: "Pablo Gold Edition Passion Fruit", meta: "17mg", pricing: [{ label: "1 Box", price: "£5" }, { label: "Pack of 4", price: "£15" }], saving: "Save £5" },
+      { name: "Pablo Gold Edition Grape Ice", meta: "17mg", pricing: [{ label: "1 Box", price: "£5" }, { label: "Pack of 4", price: "£15" }], saving: "Save £5" }
     ]
   },
 
