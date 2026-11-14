@@ -7,7 +7,7 @@ window.HV_INVENTORY = {
       {
         name: "Complete XROS Bundle",
         bestValue: true,
-        components: ["1 × Vaporesso XROS Pro 6.0 Kit (Abyssal Blue or Scorching Cloud)", "4 × Vaporesso XROS Pods", "4 × Nic Salts"],
+        components: ["1 × Vaporesso XROS Pro 6.0 Kit (Scorching Cloud)", "4 × Vaporesso XROS Pods", "4 × Nic Salts"],
         price: "£40",
         meta: "Complete XROS bundle",
         saving: "Save £10",
@@ -21,7 +21,7 @@ window.HV_INVENTORY = {
       },
       {
         name: "XROS & Salts Bundle",
-        components: ["1 × Vaporesso XROS Pro 6.0 Kit (Abyssal Blue or Scorching Cloud)", "4 × Nic Salts"],
+        components: ["1 × Vaporesso XROS Pro 6.0 Kit (Scorching Cloud)", "4 × Nic Salts"],
         price: "£30",
         meta: "Kit bundle",
         saving: "Save £5",
@@ -95,7 +95,7 @@ window.HV_INVENTORY = {
   podkits: {
     title: "Pod Kits",
     items: [
-      { name: "Vaporesso XROS Pro 6.0 Kit", price: "£25", meta: "New • Includes 2 pods", details: ["Scorching Cloud", "Abyssal Blue"] }
+      { name: "Vaporesso XROS Pro 6.0 Kit", price: "£25", meta: "New • Includes 2 pods", details: ["Scorching Cloud"] }
     ]
   },
 
