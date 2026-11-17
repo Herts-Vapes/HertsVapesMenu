@@ -15,7 +15,6 @@ const cartClose = document.getElementById("cartClose");
 const cartBody = document.getElementById("cartBody");
 const cartTotal = document.getElementById("cartTotal");
 const cartWhatsapp = document.getElementById("cartWhatsapp");
-const cartSnapchat = document.getElementById("cartSnapchat");
 const cartClear = document.getElementById("cartClear");
 const toast = document.getElementById("toast");
 let toastTimer;
@@ -360,10 +359,8 @@ async function copyOrder() {
 
 function setupLinks() {
   const number = settings.whatsappNumber || "447885752823";
-  const username = settings.snapchatUsername || "herts.vps1";
   const text = settings.defaultWhatsappText || "Hi Herts Vapes, I'd like to place an order.";
   document.querySelectorAll("[data-whatsapp-link]").forEach(link => link.href = `https://wa.me/${number}?text=${encodeURIComponent(text)}`);
-  document.querySelectorAll("[data-snapchat-link]").forEach(link => link.href = `https://www.snapchat.com/add/${username}`);
 }
 
 renderCategories();
@@ -435,10 +432,4 @@ cartWhatsapp.addEventListener("click", async () => {
   const message = await copyOrder();
   const number = settings.whatsappNumber || "447885752823";
   window.location.href = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
-});
-cartSnapchat.addEventListener("click", async () => {
-  await copyOrder();
-  showToast("✓ Order copied");
-  const username = settings.snapchatUsername || "herts.vps1";
-  setTimeout(() => window.open(`https://www.snapchat.com/add/${username}`, "_blank"), 300);
 });
