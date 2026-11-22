@@ -7,7 +7,7 @@ window.HV_INVENTORY = {
       {
         name: "Complete XROS Bundle",
         bestValue: true,
-        components: ["1 × Vaporesso XROS Pro 6.0 Kit (Scorching Cloud)", "4 × Vaporesso XROS Pods", "4 × Nic Salts"],
+        components: ["1 × Vaporesso XROS Pro 6.0 Kit", "4 × Vaporesso XROS Pods", "4 × Nic Salts"],
         price: "£40",
         meta: "Complete XROS bundle",
         saving: "Save £10",
@@ -17,17 +17,17 @@ window.HV_INVENTORY = {
           { label: "Vaporesso XROS Pods", qty: "×4" },
           { label: "Nic Salts", qty: "×4" }
         ],
-        prompts: ["Nic Salt 1", "Nic Salt 2", "Nic Salt 3", "Nic Salt 4"]
+        prompts: ["Kit colour", "Nic Salt 1", "Nic Salt 2", "Nic Salt 3", "Nic Salt 4"]
       },
       {
         name: "XROS & Salts Bundle",
-        components: ["1 × Vaporesso XROS Pro 6.0 Kit (Scorching Cloud)", "4 × Nic Salts"],
+        components: ["1 × Vaporesso XROS Pro 6.0 Kit", "4 × Nic Salts"],
         price: "£30",
         meta: "Kit bundle",
         saving: "Save £5",
         confirm: "Flavours confirmed in message",
         visuals: [{ label: "Vaporesso XROS Pro 6.0 Kit" }, { label: "Nic Salts", qty: "×4" }],
-        prompts: ["Nic Salt 1", "Nic Salt 2", "Nic Salt 3", "Nic Salt 4"]
+        prompts: ["Kit colour", "Nic Salt 1", "Nic Salt 2", "Nic Salt 3", "Nic Salt 4"]
       },
       {
         name: "15 Nic Salts Deal",
@@ -85,9 +85,10 @@ window.HV_INVENTORY = {
   disposable: {
     title: "Disposable Vapes",
     items: [
-      { name: "Lost Mary BM6000", price: "£10", meta: "11 flavours available", popular: true, flavours: ["Latte", "Juicy Peach", "Miami Mint", "Cherryade", "Cherry Ice", "Blue Razz Lemonade", "Strawberry Raspberry Cherry Ice", "Triple Mango", "Double Apple", "Cherry Cola", "Banana Volcano"] },
+      { name: "Lost Mary BM6000", price: "£10", meta: "5 flavours available", popular: true, flavours: ["Latte", "Strawberry Raspberry Cherry Ice", "Triple Mango", "Cherry Cola", "Banana Volcano"] },
+      { name: "Aura Bar Twist 40K", price: "£10", meta: "2 flavour combinations", flavours: ["Blue Sour Raspberry / Mr Blue", "Watermelon Skittles / Strawberry Burst"] },
       { name: "Hayati Dual Flavour 25000", price: "£15", meta: "2 flavour combinations", flavours: ["Kiwi Banana / Strawberry Banana", "Strawberry Guava / Dragon Berries"] },
-      { name: "Hayati Pro Max 6000", price: "£10", meta: "3 flavours available", flavours: ["Strawberry Cherry Cranberry", "Peach Aura", "Blue Sour Raspberry"] },
+      { name: "Hayati Pro Max 6000", price: "£10", meta: "3 flavours available", flavours: ["Strawberry Cherry Cranberry", "Peach Aura", "Tropical Sour Juice"] },
       { name: "SKE Crystal 600", price: "£5", meta: "5 flavours available", flavours: ["Lemon Lime", "Cherry Ice", "Mr Blue", "Blueberry Sour Raspberry", "Pineapple Peach Mango"] },
     ]
   },
@@ -95,14 +96,14 @@ window.HV_INVENTORY = {
   podkits: {
     title: "Pod Kits",
     items: [
-      { name: "Vaporesso XROS Pro 6.0 Kit", price: "£25", meta: "New • Includes 2 pods", details: ["Scorching Cloud"] }
+      { name: "Vaporesso XROS Pro 6.0 Kit", price: "£25", meta: "New • Includes 2 pods", details: ["Cosmic Black", "Abyssal Blue", "Carbon Fibre Grey"] }
     ]
   },
 
   salts: {
     title: "Nic Salts",
     items: [
-      { name: "Elux Legend Nic Salts", price: "£2.50", meta: "20mg • 25 flavours available", popular: true, flavours: ["Blueberry Cranberry Cherry", "Banana Ice", "Fizzy Cherry", "Strawberry Ice", "Watermelon Ice", "Cherry Ice", "Lemon Lime", "Strawberry Raspberry Cherry", "Pineapple Ice", "Triple Mango", "Triple Melon", "Strawberry Ice Cream", "Gummy Bear", "Double Apple", "Mr Blue", "Grape", "Juicy Peach", "Fresh Mint", "Cherry Sour Raspberry", "Blueberry Sour Raspberry", "Blackberry Ice", "Oasis", "Blue Razz Gummy", "Blue Razz Cherry", "Black Cherry"] }
+      { name: "Elux Legend Nic Salts", price: "£2.50", meta: "20mg • 24 flavours available", popular: true, flavours: ["Blueberry Cranberry Cherry", "Banana Ice", "Strawberry Ice", "Watermelon Ice", "Cherry Ice", "Lemon Lime", "Strawberry Raspberry Cherry", "Pineapple Ice", "Triple Mango", "Triple Melon", "Strawberry Ice Cream", "Gummy Bear", "Double Apple", "Mr Blue", "Grape", "Juicy Peach", "Fresh Mint", "Cherry Sour Raspberry", "Blueberry Sour Raspberry", "Blackberry Ice", "Oasis", "Blue Razz Gummy", "Blue Razz Cherry", "Black Cherry"] }
     ]
   },
 
