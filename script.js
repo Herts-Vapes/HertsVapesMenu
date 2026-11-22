@@ -132,6 +132,7 @@ function renderCategory(key) {
 
 function productImageFor(name) {
   const key = String(name).toLowerCase();
+  if (key.includes("aura bar twist 40k")) return "aura-twist-40k.png";
   if (key.includes("lost mary")) return "lostmary.png.png";
   if (key.includes("hayati dual")) return "hayati25k.png.png";
   if (key.includes("hayati pro")) return "hayati6000.png.png";
