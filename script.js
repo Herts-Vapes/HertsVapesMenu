@@ -144,6 +144,8 @@ function productImageFor(name) {
   if (key.includes("xros pro 2") || key.includes("xros 2.0 kit")) return "podkit.png.png";
   if (key.includes("nic salts")) return "eluxnicsalt.png.png";
   if (key.includes("corex") || key.includes("xros pods")) return "vaporessopod.png.png";
+  if (key.includes("hayati") && key.includes("pouch")) return "hayati-nic-pouch.png";
+  if (key.includes("pablo") && key.includes("gold edition")) return "pablo-gold.png";
   if (key.includes("pablo")) return "pablopouch.png.png";
   if (key.includes("velo")) return "velopouch.png.png";
   return "";

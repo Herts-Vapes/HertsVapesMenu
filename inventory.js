@@ -85,10 +85,10 @@ window.HV_INVENTORY = {
   disposable: {
     title: "Disposable Vapes",
     items: [
-      { name: "Lost Mary BM6000", price: "£10", meta: "5 flavours available", popular: true, flavours: ["Latte", "Strawberry Raspberry Cherry Ice", "Triple Mango", "Cherry Cola", "Banana Volcano"] },
-      { name: "Aura Bar Twist 40K", price: "£10", meta: "2 flavour combinations", flavours: ["Blue Sour Raspberry / Mr Blue", "Watermelon Skittles / Strawberry Burst"] },
-      { name: "Hayati Dual Flavour 25000", price: "£15", meta: "2 flavour combinations", flavours: ["Kiwi Banana / Strawberry Banana", "Strawberry Guava / Dragon Berries"] },
-      { name: "Hayati Pro Max 6000", price: "£10", meta: "3 flavours available", flavours: ["Strawberry Cherry Cranberry", "Peach Aura", "Tropical Sour Juice"] },
+      { name: "Lost Mary BM6000", price: "£10", meta: "8 flavours available", popular: true, flavours: ["Latte", "Triple Mango", "Cherry Cola", "Banana Volcano", "Summer Grape", "Blueberry Sour Raspberry", "Red Apple Ice", "Strawberry Watermelon"] },
+      { name: "Aura Bar Twist 40K", price: "£10", meta: "1 flavour combination", flavours: ["Watermelon Skittles / Strawberry Burst"] },
+      { name: "Hayati Dual Flavour 25000", price: "£15", meta: "7 flavour combinations", flavours: ["Kiwi Banana / Strawberry Banana", "Strawberry Guava / Dragon Berries", "Cherry Ice / Peach Mango", "Strawberry Ice / Strawberry Raspberry Ice", "Blueberry Cotton Candy / Raspberry Cotton Candy", "Grape Gummy Bear / Strawberry Gummy Bear", "Blueberry Raspberry / Mr Blue"] },
+      { name: "Hayati Pro Max 6000", price: "£10", meta: "7 flavours available", flavours: ["Peach Aura", "Strawberry Cranberry Cherry", "Blue Razz Gummy Bear", "Green Grape & Green Apple", "Strawberry Watermelon", "Mr Blue", "Strawberry Hubba Bubba"] },
       { name: "SKE Crystal 600", price: "£5", meta: "5 flavours available", flavours: ["Lemon Lime", "Cherry Ice", "Mr Blue", "Blueberry Sour Raspberry", "Pineapple Peach Mango"] },
     ]
   },
@@ -120,7 +120,12 @@ window.HV_INVENTORY = {
       { name: "Pablo Dark Cherry Gold Edition", meta: "17mg", pricing: [{ label: "1 Box", price: "£5" }, { label: "Pack of 4", price: "£15" }], saving: "Save £5" },
       { name: "Pablo Frosted Mint", meta: "50mg", pricing: [{ label: "1 Box", price: "£5" }, { label: "Pack of 4", price: "£15" }], saving: "Save £5" },
       { name: "Pablo Gold Edition Passion Fruit", meta: "17mg", pricing: [{ label: "1 Box", price: "£5" }, { label: "Pack of 4", price: "£15" }], saving: "Save £5" },
-      { name: "Pablo Gold Edition Grape Ice", meta: "17mg", pricing: [{ label: "1 Box", price: "£5" }, { label: "Pack of 4", price: "£15" }], saving: "Save £5" }
+      { name: "Pablo Gold Edition Grape Ice", meta: "17mg", pricing: [{ label: "1 Box", price: "£5" }, { label: "Pack of 4", price: "£15" }], saving: "Save £5" },
+      { name: "Hayati Frosted Mint Nic Pouches", meta: "30mg", pricing: [{ label: "1 Box", price: "£5" }, { label: "Pack of 4", price: "£15" }], saving: "Save £5" },
+      { name: "Hayati Cola Nic Pouches", meta: "30mg", pricing: [{ label: "1 Box", price: "£5" }, { label: "Pack of 4", price: "£15" }], saving: "Save £5" },
+      { name: "Hayati Banana Ice Nic Pouches", meta: "30mg", pricing: [{ label: "1 Box", price: "£5" }, { label: "Pack of 4", price: "£15" }], saving: "Save £5" },
+      { name: "Hayati Ice Cold Nic Pouches", meta: "30mg", pricing: [{ label: "1 Box", price: "£5" }, { label: "Pack of 4", price: "£15" }], saving: "Save £5" },
+      { name: "Hayati Bubblegum Nic Pouches", meta: "30mg", pricing: [{ label: "1 Box", price: "£5" }, { label: "Pack of 4", price: "£15" }], saving: "Save £5" }
     ]
   },
 
